@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the image container */
+        .image-container {
+            position: relative;
+        }
+
+        /* Style for each region */
+        .region {
+            position: absolute;
+            cursor: pointer; /* Cursor style on hover */
+            opacity: 0.1; /* Set the opacity to make regions transparent */
+        }
+
+        /* Add styles for each region (adjust coordinates accordingly) */
+        #region1 { top: 280px; left: 700px; width: 100px; height: 120px; background-color: rgba(255, 0, 0, 0.7); }
+        #region2 { top: 284px; left: 300px; width: 100px; height: 300px; background-color: rgba(0, 255, 0, 0.7); }
+        #region2a { top: 280px; left: 550px; width: 130px; height: 300px; background-color: rgb(0, 255, 0, 0.7); }
+        #region3 { top: 100px; left: 200px; width: 650px; height: 190px; background-color: rgba(0, 0, 255, 0.7); }
+        #region3a { top: 270px; left: 170px; width: 130px; height: 300px; background-color: rgba(0, 0, 255, 0.7); }
+        #region3b { top: 280px; left: 400px; width: 130px; height: 300px; background-color: rgb(0, 0, 255, 0.7); }
+        #region4 { top: 100px; left: 100px; width: 500px; height: 650px; background-color: rgb(255, 0, 0, 1); }
+        #region5 { top: 10px; left: 10px; width: 300px; height: 300px; background-color: rgba(255, 0, 0, 1); }
+
+
+        /* Style for the stop button */
+        #stopButton {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style for the image to fit within the screen */
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <!-- Image -->
+    <img src="img/image002.png" alt="Your Image">
+    <!-- Regions (adjust coordinates accordingly) -->
+    <div id="region1" class="region" onclick="playMusic(1)"></div>
+    <div id="region2" class="region" onclick="playMusic(2)"></div>
+    <div id="region2a" class="region" onclick="playMusic(2)"></div>
+    <div id="region3" class="region" onclick="playMusic(3)"></div>
+    <div id="region3a" class="region" onclick="playMusic(3)"></div>
+    <div id="region3b" class="region" onclick="playMusic(3)"></div>
+
+    <!-- Audio elements for each region -->
+    <audio id="audio1" src="audio/Wooden hard smooth 2 lr.mp4"></audio>
+    <audio id="audio2" src="audio/Smooth cushion lr.mp4"></audio>
+    <audio id="audio3" src="audio/fur-l.mp4"></audio>
+
+    <!-- Stop button -->
+    <div>
+        <button id="stopButton" onclick="stopMusic()">Stop Audio</button>
+    </div>
+    
+<div class="image-container">
+<!-- Image 1 -->
+<img src="img/image003.png" alt="Image 1" onclick="playMusic(4)" class="hidden-image" id="image1a">
+<div id="region4" class="region" onclick="playMusic(4)"></div>
+<audio id="audio4" src="audio/Wooden hard smooth 2 rl.m4a"></audio>
+</div>
+    
+        <!-- Stop button -->
+        <div>
+            <button id="stopButton" onclick="stopMusic()">Stop Audio</button>
+        </div>
+
+        <div class="image-container">
+<!-- Image 2 -->
+<img src="img/image004.png" alt="Image 2" onclick="playMusic(5)" class="hidden-image" id="image1b" >
+<div id="region5" class="region" onclick="playMusic(5)"></div>
+<audio id="audio5" src="audio/Scaly lr.m4a"></audio>
+        </div>
+    
+        <!-- Stop button -->
+        <div>
+            <button id="stopButton" onclick="stopMusic()">Stop Audio</button>
+        </div>
+
+</div>
+
+<script>
+    // JavaScript function to play music for each region
+    function playMusic(regionNumber) {
+        // Pause all audio elements
+        document.querySelectorAll('audio').forEach(audio => audio.pause());
+
+        // Play the corresponding audio for the clicked region
+        document.getElementById(`audio${regionNumber}`).play();
+    }
+
+    // JavaScript function to stop all music
+    function stopMusic() {
+        // Pause all audio elements
+        document.querySelectorAll('audio').forEach(audio => audio.pause());
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+   <!-- Audio elements for each region 
+   <audio id="audio1" src="audio/beehive.mp4"></audio>
+   <audio id="audio2" src="audio/bumblebee.mp4"></audio>
+   <audio id="audio3" src="audio/fire.mp4"></audio>
+   <audio id="audio4" src="audio/Smooth cushion bt.mp4"></audio>
+-->
+       <!-- Image 
+       <img src="img/bumblebee1.jpg" alt="Your Image">
+       -->
