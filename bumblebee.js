@@ -93,18 +93,18 @@ fur3.load();
 fur3.loop=true;
 var playFur3=0;
 
-var sand = new Audio('audio/sand.mp4');
+var sand = new Audio('audio/Scaly lr.m4a');
 sand.load();
 sand.loop=true;
 var playSand=0;
 
-var scales = new Audio('audio/Scaly lr.m4a');
+var scales = new Audio('audio/croc-scales.mp4');
 //var scales = new Audio('audio/fire.mp4');
 scales.load();
 scales.loop=true;
 var playScales=0;
 
-var eyeHex = new Audio('audio/croc-scales.mp4');
+var eyeHex = new Audio('audio/Scaly bt.m4a');
 eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
@@ -228,7 +228,7 @@ function prepareCanvas()
 				console.log("bbEye1")
 			}
 
-			else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.58
+			else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.28
 			    && mouseY > canvasHeight*0.28 && mouseY < canvasHeight*0.96 ){
 			    t="sand";
 				console.log("pollenBasket")
@@ -300,7 +300,7 @@ function prepareCanvas()
 			console.log("bbEye1")
 		}
 
-		else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.58
+		else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.28
 			&& mouseY > canvasHeight*0.28 && mouseY < canvasHeight*0.96 ){
 			t="sand";
 			console.log("pollenBasket")
