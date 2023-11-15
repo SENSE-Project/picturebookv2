@@ -41,6 +41,7 @@ var colorFur2 = "fur2";
 var colorScales1 = "scales1";
 var colorSand = "sand";
 var colorEye = "eyehex";
+var colorBuzz = "buzz";
 
 var logoImage = new Image();
 var bbImage = new Image();
@@ -108,6 +109,11 @@ var eyeHex = new Audio('audio/Scaly bt.m4a');
 eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
+
+var buzz = new Audio('audio/beehive.mp4');
+buzz.load();
+buzz.loop = true;
+var playBuzz = 0;
 
 /**
 * Calls the redraw function after all neccessary resources are loaded.
@@ -246,6 +252,12 @@ function prepareCanvas()
 				console.log("fur2")
 			}
 
+			    else if (mouseX > 1 && mouseX < 200
+			    && mouseY > 1 && mouseY < 200 ){
+			    t=colorBuzz;
+				console.log("buzz")
+			}
+
 			console.log("tex="+t+" startaudio");
 			closeAudios(t);
 			if (t==colorSand){
@@ -264,6 +276,9 @@ function prepareCanvas()
 				else if (t==colorEye){
 					if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
 					}
+			    else if (t == colorBuzz) {
+				    if (playBuzz ==0) {buzz.play(); playBuzz = 1; };
+			    }
 			
 		    }
 		}
@@ -318,6 +333,12 @@ function prepareCanvas()
 			console.log("fur2")
 		}
 
+		    else if (mouseX > 1 && mouseX < 200
+			    && mouseY > 1 && mouseY < 200 ){
+			    t=colorBuzz;
+				console.log("buzz")
+			}
+
 		console.log("touchmove=" + t);
 		closeAudios(t);
 
@@ -338,6 +359,10 @@ function prepareCanvas()
 			if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
 			}
 	    }
+
+		     else if (t == "buzz") {
+				    if (playBuzz ==0) {buzz.play(); playBuzz = 1; };
+			    }
 	
 	    else{
 		console.log("close audios");
@@ -387,6 +412,10 @@ function closeAudios(t)
 
 	if (t!="eyehex") {
 		if (playEyeHex == 1) {eyeHex.pause(); playEyeHex = 0; };
+	}
+
+	if (t!="buzz") {
+		if (playBuzz == 1) {buzz.pause(); playBuzz = 0; };
 	}
 
 
