@@ -105,7 +105,7 @@ scales.load();
 scales.loop=true;
 var playScales=0;
 
-var eyeHex = new Audio('audio/Scaly bt.m4a');
+var eyeHex = new Audio('audio/Scaly bt.mp3');
 eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
