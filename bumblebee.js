@@ -49,6 +49,8 @@ var bbImage = new Image();
 var bbEye = new Image();
 var bbEyeZoomed = new Image();
 
+var buzzImage = new Image();
+
 
 var crayonPattern;
 var clickX = new Array();
@@ -189,6 +191,9 @@ function prepareCanvas()
 
 	bbEyeZoomed.onload = function() { resourceLoaded(); };
 	bbEyeZoomed.src = "images/bb-eye-zoomed.png";
+
+	buzzImage.onload = function() { resourceLoaded(); };
+	buzzImage.src = "images/touch_buzz.png";
     
    
     // Add mouse events
@@ -240,6 +245,12 @@ function prepareCanvas()
 				console.log("pollenBasket")
 			}
 
+			else if (mouseX > 1 && mouseX < 200
+			    && mouseY > canvasHeight - 210 && mouseY < canvasHeight ){
+			    t=colorBuzz;
+				console.log("buzz")
+			}
+
 			else if (mouseX > canvasWidth*0.08 && mouseX < canvasWidth*0.2
 			    && mouseY > canvasHeight*0.08 && mouseY < canvasHeight*0.87 ){
 			    t=colorFur3;
@@ -250,12 +261,6 @@ function prepareCanvas()
 			    && mouseY > canvasHeight*0.04 && mouseY < canvasHeight*0.4 ){
 			    t=colorFur2;
 				console.log("fur2")
-			}
-
-			    else if (mouseX > 1 && mouseX < 200
-			    && mouseY > 1 && mouseY < 200 ){
-			    t=colorBuzz;
-				console.log("buzz")
 			}
 
 			console.log("tex="+t+" startaudio");
@@ -321,6 +326,11 @@ function prepareCanvas()
 			console.log("pollenBasket")
 		}
 
+		else if (mouseX > 1 && mouseX < 200 && mouseY > canvasHeight - 210 && mouseY < canvasHeight - 10 ){
+			t=colorBuzz;
+			console.log("buzz")
+			}
+
 		else if (mouseX > canvasWidth*0.08 && mouseX < canvasWidth*0.2
 			&& mouseY > canvasHeight*0.08 && mouseY < canvasHeight*0.87 ){
 			t=colorFur3;
@@ -333,11 +343,7 @@ function prepareCanvas()
 			console.log("fur2")
 		}
 
-		    else if (mouseX > 1 && mouseX < 200
-			    && mouseY > 1 && mouseY < 200 ){
-			    t=colorBuzz;
-				console.log("buzz")
-			}
+
 
 		console.log("touchmove=" + t);
 		closeAudios(t);
@@ -475,6 +481,7 @@ function redrawInterface(intType)
 	context.drawImage(logoImage, 10, 10, 200,200);
 	context.drawImage(bbEye, canvasWidth*0.67 + 10, 10, (canvasWidth - 10 - canvasWidth*0.67), canvasHeight * 0.5);
 	context.drawImage(bbEyeZoomed, canvasWidth * 0.67 + 10, canvasHeight * 0.5 + 10, (canvasWidth - 10 - canvasWidth*0.67), (canvasHeight * 0.5 - 20));
+	context.drawImage(buzzImage, 10, canvasHeight - 210, 200, 200);
 
 	console.log("draw logo: h="+canvasHeight+" w="+canvasWidth);
 	
@@ -504,6 +511,3 @@ function redrawCanvas()
 /**
 * Redraws the recent changes to canvas.
 */
-
-
-
