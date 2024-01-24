@@ -185,8 +185,8 @@ function prepareCanvas()
 	
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.18 + "px"; // One-third of canvas width
-	button1.style.top = canvasHeight * 0.65 + "px"; // Half of canvas height
+	button1.style.left = canvasWidth * 0.16 + "px"; // One-third of canvas width
+	button1.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
 	
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -208,8 +208,8 @@ function prepareCanvas()
 	
 	// Positioning:
 	button2.style.position = "absolute";
-	button2.style.left = canvasWidth * 0.62 + "px"; // One-third of canvas width
-	button2.style.top = canvasHeight * 0.65 + "px"; // Half of canvas height
+	button2.style.left = canvasWidth * 0.645 + "px"; // One-third of canvas width
+	button2.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
 	
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -503,9 +503,9 @@ function redrawInterface(intType)
 	context.fillRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	context.strokeRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	console.log("h="+canvasHeight+" w="+canvasWidth);
-	context.drawImage(logoImage, canvasWidth * 0.5 - 100, 10, canvasWidth * 0.1, canvasHeight * 0.17);
-	context.drawImage(bella, canvasWidth * 0.22, canvasHeight * 0.42, canvasWidth * 0.1, canvasHeight * 0.17);
-	context.drawImage(barky, canvasWidth * 0.67, canvasHeight * 0.42, canvasWidth * 0.1, canvasHeight * 0.17);
+	context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.15, canvasHeight * 0.24);
+	context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
+	context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
 
 	console.log("draw logo: h="+canvasHeight+" w="+canvasWidth);
 	
