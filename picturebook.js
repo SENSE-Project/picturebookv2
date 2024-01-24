@@ -185,7 +185,7 @@ function prepareCanvas()
 	
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.2 + "px"; // One-third of canvas width
+	button1.style.left = canvasWidth * 0.18 + "px"; // One-third of canvas width
 	button1.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
 	
 	// Styling:
