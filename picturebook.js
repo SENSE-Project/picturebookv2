@@ -181,11 +181,11 @@ function prepareCanvas()
 	const button1 = document.createElement('button');
 
 	// Icon and text:
-	button1.innerHTML = '<i class="bi bi-bug"></i> Bella the Bumblbee';
+	button1.innerHTML = '<i class="bi bi-bug"></i> Bella the Bumblebee';
 	
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.16 + "px"; // One-third of canvas width
+	button1.style.left = canvasWidth * 0.2 + "px"; // One-third of canvas width
 	button1.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
 	
 	// Styling:
@@ -208,7 +208,7 @@ function prepareCanvas()
 	
 	// Positioning:
 	button2.style.position = "absolute";
-	button2.style.left = canvasWidth * 0.645 + "px"; // One-third of canvas width
+	button2.style.left = canvasWidth * 0.66 + "px"; // One-third of canvas width
 	button2.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
 	
 	// Styling:
@@ -503,7 +503,7 @@ function redrawInterface(intType)
 	context.fillRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	context.strokeRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	console.log("h="+canvasHeight+" w="+canvasWidth);
-	context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.15, canvasHeight * 0.24);
+	context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
 	context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
 	context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
 
