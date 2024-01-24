@@ -40,12 +40,9 @@ var colorEye = "eyehex";
 var colorBuzz = "buzz";
 
 var logoImage = new Image();
-var bbImage = new Image();
 
-var bbEye = new Image();
-var bbEyeZoomed = new Image();
-
-var buzzImage = new Image();
+var bella = new Image();
+var barky = new Image();
 
 var crayonPattern;
 var clickX = new Array();
@@ -172,33 +169,57 @@ function prepareCanvas()
     logoImage.onload = function() { resourceLoaded();    };
     logoImage.src = "images/sense-logo0.png";
 
-    bbImage.onload = function() { resourceLoaded();    };
-    bbImage.src = "images/bumblebee-textures.png";
+    bella.onload = function() { resourceLoaded();    };
+    bella.src = "images/bella_brown_right.png";
 
-	bbEye.onload = function() { resourceLoaded(); };
-	bbEye.src = "images/bb-eye.png";
+	barky.onload = function() { resourceLoaded(); };
+	barky.src = "images/barky_left.png";
 
-	bbEyeZoomed.onload = function() { resourceLoaded(); };
-	bbEyeZoomed.src = "images/bb-eye-zoomed.png";
 
-	buzzImage.onload = function() { resourceLoaded(); };
-	buzzImage.src = "images/touch_buzz.png";
-
-		// adding button
+	// adding button
 	// Create the button element:
-	const button = document.createElement('button');
-	button.textContent = "Button Text";
-	button.style.position = "absolute";
-	//button.style.zIndex = 100; // Higher than the images' z-index
-	button.style.left = (canvas.width / 2) - (button.offsetWidth / 2) + "px"; // Center horizontally
-	button.style.top = (canvas.height / 2) - (button.offsetHeight / 2) + "px"; // Center vertically
+	const button1 = document.createElement('button');
+
+	// Icon and text:
+	button1.innerHTML = '<i class="bi bi-bug"></i> Bella the Bumblbee';
+	
+	// Positioning:
+	button1.style.position = "absolute";
+	button1.style.left = canvasWidth * 0.18 + "px"; // One-third of canvas width
+	button1.style.top = canvasHeight * 0.65 + "px"; // Half of canvas height
+	
+	// Styling:
+	button1.classList.add("btn", "btn-lg", "btn-outline-success");
 
 	// Add the button to the canvas's parent element:
-	canvasDiv.appendChild(button);
+	canvasDiv.appendChild(button1);
 
 	// Add an event listener for the button click:
-	button.addEventListener('click', () => {
-		console.log("Button clicked!");
+	button1.addEventListener('click', () => {
+		console.log("Button1 clicked!");
+		// Your code to execute when the button is clicked
+	});
+
+	// Create the button element:
+	const button2 = document.createElement('button');
+
+	// Icon and text:
+	button2.innerHTML = '<i class="bi bi-tree"></i> Barky the Tree Bark';
+	
+	// Positioning:
+	button2.style.position = "absolute";
+	button2.style.left = canvasWidth * 0.62 + "px"; // One-third of canvas width
+	button2.style.top = canvasHeight * 0.65 + "px"; // Half of canvas height
+	
+	// Styling:
+	button2.classList.add("btn", "btn-lg", "btn-outline-success");
+
+	// Add the button to the canvas's parent element:
+	canvasDiv.appendChild(button2);
+
+	// Add an event listener for the button click:
+	button2.addEventListener('click', () => {
+		console.log("Button2 clicked!");
 		// Your code to execute when the button is clicked
 	});
     
@@ -482,12 +503,9 @@ function redrawInterface(intType)
 	context.fillRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	context.strokeRect(canvasX+5,5, canvasWidth, canvasHeight-10);
 	console.log("h="+canvasHeight+" w="+canvasWidth);
-	context.drawImage(bbImage, 10, 10, canvasWidth*0.67,canvasHeight-20);
-	context.fillRect(10,10, 200,200);
-	context.drawImage(logoImage, 10, 10, 200,200);
-	context.drawImage(bbEye, canvasWidth*0.67 + 10, 10, (canvasWidth - 10 - canvasWidth*0.67), canvasHeight * 0.5);
-	context.drawImage(bbEyeZoomed, canvasWidth * 0.67 + 10, canvasHeight * 0.5 + 10, (canvasWidth - 10 - canvasWidth*0.67), (canvasHeight * 0.5 - 20));
-	context.drawImage(buzzImage, 10, canvasHeight - 210, 200, 200);
+	context.drawImage(logoImage, canvasWidth * 0.5 - 100, 10, canvasWidth * 0.1, canvasHeight * 0.17);
+	context.drawImage(bella, canvasWidth * 0.22, canvasHeight * 0.42, canvasWidth * 0.1, canvasHeight * 0.17);
+	context.drawImage(barky, canvasWidth * 0.67, canvasHeight * 0.42, canvasWidth * 0.1, canvasHeight * 0.17);
 
 	console.log("draw logo: h="+canvasHeight+" w="+canvasWidth);
 	
