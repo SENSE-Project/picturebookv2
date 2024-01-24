@@ -4,7 +4,6 @@ var canvasColors;
 var canvasDiv;
 var canvasColorsDiv;
 
-
 var interfaceType="canvas";
 var context;
 var contextColors;
@@ -16,9 +15,7 @@ if (scaleFactorM*700>vh(100)){scaleFactorM=vh(100)/900;}
 
 var myScreenOrientation = window.screen.orientation;
 
-
 var orient="landscape";
-
 
 var toolWidth = 300*scaleFactorM;
 var toolHeight = 800*scaleFactorM;
@@ -35,7 +32,6 @@ var markerX2=400*scaleFactor;
 var padding = 25;
 var lineWidth = 8;
 
-
 var colorFur3 = "fur3";
 var colorFur2 = "fur2";
 var colorScales1 = "scales1";
@@ -51,7 +47,6 @@ var bbEyeZoomed = new Image();
 
 var buzzImage = new Image();
 
-
 var crayonPattern;
 var clickX = new Array();
 var clickY = new Array();
@@ -66,16 +61,10 @@ for (let i=0; i<canvasWidth; i++){
 
 }
 
-
-
-
 var paint = false;
 var curTex = "null";
 
-
 var curTool = "haptics";
-
-
 
 var drawingAreaX = 10+canvasX;
 var drawingAreaY = 10;
@@ -84,7 +73,6 @@ var drawingAreaHeight = canvasHeight-20;
 
 var totalLoadResources = 13;
 var curLoadResNum = 0;
-
 
 var fur2 = new Audio('audio/fur2.mp4');
 fur2.load();
@@ -126,7 +114,6 @@ function resourceLoaded()
 		redrawInterface(interfaceType);
 //	}
 }
-
 
 function vh(percent) {
     var h = Math.max(document.documentElement.clientHeight, $(this).innerHeight() || 0);
@@ -177,6 +164,8 @@ function prepareCanvas()
     console.log("SCALE="+scaleFactor + "vw/vh=" + vw(100) + "/" + vh(100));
     // Note: The above code is a workaround for IE 8 and lower. Otherwise we could have used:
     //     context = document.getElementById('canvas').getContext("2d");
+
+
     
     // Load images
     // -----------
@@ -194,6 +183,24 @@ function prepareCanvas()
 
 	buzzImage.onload = function() { resourceLoaded(); };
 	buzzImage.src = "images/touch_buzz.png";
+
+		// adding button
+	// Create the button element:
+	const button = document.createElement('button');
+	button.textContent = "Button Text";
+	button.style.position = "absolute";
+	//button.style.zIndex = 100; // Higher than the images' z-index
+	button.style.left = (canvas.width / 2) - (button.offsetWidth / 2) + "px"; // Center horizontally
+	button.style.top = (canvas.height / 2) - (button.offsetHeight / 2) + "px"; // Center vertically
+
+	// Add the button to the canvas's parent element:
+	canvasDiv.appendChild(button);
+
+	// Add an event listener for the button click:
+	button.addEventListener('click', () => {
+		console.log("Button clicked!");
+		// Your code to execute when the button is clicked
+	});
     
    
     // Add mouse events
@@ -291,8 +298,7 @@ function prepareCanvas()
 
 	}
     });
-
-
+	
 	
     $('#canvas').on("pointermove", function(e){
 	if(e.buttons>0){
