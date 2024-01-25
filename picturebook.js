@@ -38,6 +38,7 @@ var colorScales1 = "scales1";
 var colorSand = "sand";
 var colorEye = "eyehex";
 var colorBuzz = "buzz";
+var colorBark = "bark";
 
 var logoImage = new Image();
 
@@ -101,6 +102,11 @@ var buzz = new Audio('audio/beehive.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
+
+var bark_sound = new Audio('audio/Tree bark 2 lr.mp4')
+bark_sound.load();
+bark_sound.loop = true;
+var playBark_sound = 0;
 
 /**
 * Calls the redraw function after all neccessary resources are loaded.
@@ -242,7 +248,21 @@ function prepareCanvas() {
 						console.log("x,y=" + mouseX + ", " + mouseY);
 						console.log(mouseX / canvasWidth, mouseY / canvasHeight);
 
-						if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
+						if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
+							&& mouseY > canvasHeight * 0.36 
+							&& mouseY < canvasHeight * 0.74) {
+							t = colorBuzz;
+							console.log(t)
+							}
+						
+							else if (mouseX > canvasWidth * 0.6 && mouseX < canvasWidth * 0.9
+								&& mouseY > canvasHeight * 0.25 
+								&& mouseY < canvasHeight * 0.73) {
+								t = colorBark;
+								console.log(t)
+								}
+
+						/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 							&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
 							t = "eyehex";
 							console.log("bbEyeZoomed");
@@ -282,7 +302,7 @@ function prepareCanvas() {
 							&& mouseY > canvasHeight * 0.04 && mouseY < canvasHeight * 0.4) {
 							t = colorFur2;
 							console.log("fur2")
-						}
+						} */
 
 						console.log("tex=" + t + " startaudio");
 						closeAudios(t);
@@ -306,6 +326,10 @@ function prepareCanvas() {
 							if (playBuzz == 0) { buzz.play(); playBuzz = 1; };
 						}
 
+						else if (t == colorBark) {
+							if (playBark_sound == 0) { bark_sound.play(); playBark_sound = 1; };
+						}
+
 					}
 				}
 			}
@@ -322,7 +346,21 @@ function prepareCanvas() {
 			if (curTool == "haptics") {
 				var t = "null";
 
-				if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
+				if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
+					&& mouseY > canvasHeight * 0.36 
+					&& mouseY < canvasHeight * 0.74) {
+					t = colorBuzz;
+					console.log(t)
+					}
+				
+					else if (mouseX > canvasWidth * 0.6 && mouseX < canvasWidth * 0.9
+						&& mouseY > canvasHeight * 0.25 
+						&& mouseY < canvasHeight * 0.73) {
+						t = colorBark;
+						console.log(t)
+						}
+
+				/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 					&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
 					t = "eyehex";
 					console.log("bbEyeZoomed");
@@ -361,7 +399,7 @@ function prepareCanvas() {
 					&& mouseY > canvasHeight * 0.04 && mouseY < canvasHeight * 0.4) {
 					t = colorFur2;
 					console.log("fur2")
-				}
+				} */
 
 				console.log("touchmove=" + t);
 				closeAudios(t);
@@ -384,8 +422,12 @@ function prepareCanvas() {
 				}
 			}
 
-			else if (t == "buzz") {
+			else if (t == colorBuzz) {
 				if (playBuzz == 0) { buzz.play(); playBuzz = 1; };
+			}
+
+			else if (t == colorBark) {
+				if (playBark_sound == 0) { bark_sound.play(); playBark_sound = 1; };
 			}
 
 			else {
@@ -438,6 +480,10 @@ function closeAudios(t) {
 	if (t != "buzz") {
 		if (playBuzz == 1) { buzz.pause(); playBuzz = 0; };
 	}
+
+	if (t != colorBark) {
+		if (playBark_sound == 1) { bark_sound.pause(); playBark_sound = 0; };
+	} 
 
 }
 
