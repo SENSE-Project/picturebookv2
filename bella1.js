@@ -43,7 +43,7 @@ var colorBark = "bark";
 var logoImage = new Image();
 
 var bella = new Image();
-var barky = new Image();
+var main = new Image();
 
 var crayonPattern;
 var clickX = new Array();
@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/beehive.mp4');
+var buzz = new Audio('audio/bumblebee.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -169,7 +169,10 @@ function prepareCanvas() {
 	// Load images
 	// -----------
 	bella.onload = function () { resourceLoaded(); };
-	bella.src = "images/bella_brown_right.png";
+	bella.src = "images/bella_brown_left.png";
+
+	main.onload = function () { resourceLoaded(); };
+	main.src = "images/bumblebee_flying_1000x742.jpg";
 
 	// adding button
 	// Create the button element:
@@ -216,16 +219,40 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella1.html";
+		window.location.href = "bella2.html";
+		// Your code to execute when the button is clicked
+	});
+
+	// Create the button element:
+	const button3 = document.createElement('button');
+
+	// Icon and text:
+	button3.innerHTML = '<i class="bi bi-caret-left"></i> Back';
+
+	// Positioning:
+	button3.style.position = "absolute";
+	button3.style.left = canvasWidth * 0.89 + "px"; // One-third of canvas width
+	button3.style.top = canvasHeight * 0.95 + "px"; // Half of canvas height
+
+	// Styling:
+	button3.classList.add("btn", "btn-lg", "btn-outline-success");
+
+	// Add the button to the canvas's parent element:
+	canvasDiv.appendChild(button3);
+
+	// Add an event listener for the button click:
+	button3.addEventListener('click', () => {
+		console.log("Button3 clicked!");
+		window.location.href = "bella.html";
 		// Your code to execute when the button is clicked
 	});
 
 	// Create a div element with the specified classes
 const contentDiv = document.createElement('div');
-contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h1');
+contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready to lend a helping hand to her friends. Come along and discover the amazing textures that help Bella thrive in her world.';
+const contentText = "Why do bumblebees make a buzzing sound? Buzzing is my business! But let me tell you, it's not just about flapping my wings like crazy, though that's part of it, believe me! My wings whizzing that fast makes a real racket, like a tiny helicopter taking off. Bzzz! Bzzz! You hear that? That's me zooming through the air, my wings going like little feathered fans. But sometimes, I do a different kind of buzz. It's not the whirring of my wings, but a deeper rumble that comes from inside me, like a tiny drum in my thorax. That's my special secret weapon: my buzz muscles! Some flowers just love it! There are these amazing flowers that only release their pollen when they get a good buzzing. My special rumble tickles the pollen right out of them, and then whoosh! I scoop it up with my fuzzy legs and off I go, a pollen pirate with a treasure chest full of bee-gold! So, the next time you hear a bumblebee buzzing, remember, it's not just a noisy bee having fun. It's a tiny dancer shaking pollen loose, a secret code to unlock flower feasts, and maybe, just maybe, a little helping hand to make those yummy tomatoes and blueberries grow in your garden! Remember, buzzing is more than just noise. It's a bee's superpower, a flower's secret wish, and a tiny symphony that helps our whole world bloom! Now, if you'll excuse me, my buzz muscles are warming up! Bzzz! See you in the garden!";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
@@ -241,7 +268,6 @@ contentDiv.style.padding = "15px"; // Adjust values as needed
 
 // Append the div element to the desired location in your DOM
 canvasDiv.appendChild(contentDiv);
-
 
 	// Add mouse events
 	// ----------------
@@ -267,9 +293,9 @@ canvasDiv.appendChild(contentDiv);
 						console.log("x,y=" + mouseX + ", " + mouseY);
 						console.log(mouseX / canvasWidth, mouseY / canvasHeight);
 
-						if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
-							&& mouseY > canvasHeight * 0.36 
-							&& mouseY < canvasHeight * 0.74) {
+						if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
+							&& mouseY > canvasHeight * 0.06 
+							&& mouseY < canvasHeight * 0.99) {
 							t = colorBuzz;
 							console.log(t)
 							}
@@ -358,9 +384,9 @@ canvasDiv.appendChild(contentDiv);
 			if (curTool == "haptics") {
 				var t = "null";
 
-				if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
-					&& mouseY > canvasHeight * 0.36 
-					&& mouseY < canvasHeight * 0.74) {
+				if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
+					&& mouseY > canvasHeight * 0.06 
+					&& mouseY < canvasHeight * 0.99) {
 					t = colorBuzz;
 					console.log(t)
 					}
@@ -531,8 +557,8 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
-		//context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
+		context.drawImage(bella, canvasWidth * 0.7, canvasHeight * 0.6, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
+		context.drawImage(main, canvasWidth * 0.006, canvasHeight * 0.06, canvasWidth * 0.5, canvasHeight * 0.925);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}
