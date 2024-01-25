@@ -4,31 +4,31 @@ var canvasColors;
 var canvasDiv;
 var canvasColorsDiv;
 
-var interfaceType="canvas";
+var interfaceType = "canvas";
 var context;
 var contextColors;
-var scaleFactor =vmax(100)/1200;
-var scaleFactorM =vmax(100)/1200;
-var scaleFactorH =vh(100)/1000;
-if (scaleFactorM*700>vh(100)){scaleFactorM=vh(100)/900;}
+var scaleFactor = vmax(100) / 1200;
+var scaleFactorM = vmax(100) / 1200;
+var scaleFactorH = vh(100) / 1000;
+if (scaleFactorM * 700 > vh(100)) { scaleFactorM = vh(100) / 900; }
 //if (scaleFactorM>1.3){scaleFactorM=1;}
 
 var myScreenOrientation = window.screen.orientation;
 
-var orient="landscape";
+var orient = "landscape";
 
-var toolWidth = 300*scaleFactorM;
-var toolHeight = 800*scaleFactorM;
+var toolWidth = 300 * scaleFactorM;
+var toolHeight = 800 * scaleFactorM;
 var canvasX = 0;
-var canvasY= 0;
+var canvasY = 0;
 
-var windowWidth= $(this).innerWidth();
-var windowHeight= $(this).innerHeight();
-var canvasWidth = $(this).innerWidth()-10;
+var windowWidth = $(this).innerWidth();
+var windowHeight = $(this).innerHeight();
+var canvasWidth = $(this).innerWidth() - 10;
 var canvasHeight = $(this).innerHeight();//-vmin(3.7);
 
-var markerX=400;
-var markerX2=400*scaleFactor;
+var markerX = 400;
+var markerX2 = 400 * scaleFactor;
 var padding = 25;
 var lineWidth = 8;
 
@@ -53,8 +53,8 @@ var clickSize = new Array();
 var clickDrag = new Array();
 
 var pixelTexture = {};
-for (let i=0; i<canvasWidth; i++){
-    pixelTexture[i]={};
+for (let i = 0; i < canvasWidth; i++) {
+	pixelTexture[i] = {};
 
 }
 
@@ -63,34 +63,34 @@ var curTex = "null";
 
 var curTool = "haptics";
 
-var drawingAreaX = 10+canvasX;
+var drawingAreaX = 10 + canvasX;
 var drawingAreaY = 10;
-var drawingAreaWidth = canvasWidth-10;
-var drawingAreaHeight = canvasHeight-20;
+var drawingAreaWidth = canvasWidth - 10;
+var drawingAreaHeight = canvasHeight - 20;
 
 var totalLoadResources = 13;
 var curLoadResNum = 0;
 
 var fur2 = new Audio('audio/fur2.mp4');
 fur2.load();
-fur2.loop=true;
-var playFur2=0;
+fur2.loop = true;
+var playFur2 = 0;
 
 var fur3 = new Audio('audio/fur3.mp4');
 fur3.load();
-fur3.loop=true;
-var playFur3=0;
+fur3.loop = true;
+var playFur3 = 0;
 
 var sand = new Audio('audio/Scaly lr.m4a');
 sand.load();
-sand.loop=true;
-var playSand=0;
+sand.loop = true;
+var playSand = 0;
 
 var scales = new Audio('audio/croc-scales.mp4');
 //var scales = new Audio('audio/fire.mp4');
 scales.load();
-scales.loop=true;
-var playScales=0;
+scales.loop = true;
+var playScales = 0;
 
 var eyeHex = new Audio('audio/Scaly bt.mp3');
 eyeHex.load();
@@ -105,76 +105,71 @@ var playBuzz = 0;
 /**
 * Calls the redraw function after all neccessary resources are loaded.
 */
-function resourceLoaded()
-{
-//	if(++curLoadResNum >= totalLoadResources){
-		redrawInterface(interfaceType);
-//	}
+function resourceLoaded() {
+	//	if(++curLoadResNum >= totalLoadResources){
+	redrawInterface(interfaceType);
+	//	}
 }
 
 function vh(percent) {
-    var h = Math.max(document.documentElement.clientHeight, $(this).innerHeight() || 0);
-  return (percent * h) / 100;
+	var h = Math.max(document.documentElement.clientHeight, $(this).innerHeight() || 0);
+	return (percent * h) / 100;
 }
 
 function vw(percent) {
-    var w = Math.max(document.documentElement.clientWidth, $(this).innerWidth() || 0);
-  return (percent * w) / 100;
+	var w = Math.max(document.documentElement.clientWidth, $(this).innerWidth() || 0);
+	return (percent * w) / 100;
 }
 
 function vmin(percent) {
-  return Math.min(vh(percent), vw(percent));
+	return Math.min(vh(percent), vw(percent));
 }
 
 function vmax(percent) {
-  return Math.max(vh(percent), vw(percent));
+	return Math.max(vh(percent), vw(percent));
 }
- var elem = document.documentElement;
+var elem = document.documentElement;
 function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	} else if (elem.webkitRequestFullscreen) { /* Safari */
+		elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) { /* IE11 */
+		elem.msRequestFullscreen();
+	}
 };
 /**
 * Creates a canvas element, loads images, adds events, and draws the canvas for the first time.
 */
-function prepareCanvas()
-{
+function prepareCanvas() {
 
-    // Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
-    canvasDiv = document.getElementById('canvasDiv');
+	// Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
+	canvasDiv = document.getElementById('canvasDiv');
 
-    canvas = document.createElement('canvas');
-    canvas.setAttribute('width', windowWidth);
-    canvas.setAttribute('height', windowHeight);
-    canvas.setAttribute('id', 'canvas');
-    canvasDiv.appendChild(canvas);
+	canvas = document.createElement('canvas');
+	canvas.setAttribute('width', windowWidth);
+	canvas.setAttribute('height', windowHeight);
+	canvas.setAttribute('id', 'canvas');
+	canvasDiv.appendChild(canvas);
 
-    if(typeof G_vmlCanvasManager != 'undefined') {
-	canvas = G_vmlCanvasManager.initElement(canvas);
-    }
-    context = canvas.getContext("2d"); // Grab the 2d canvas context
-    console.log("SCALE="+scaleFactor + "vw/vh=" + vw(100) + "/" + vh(100));
-    // Note: The above code is a workaround for IE 8 and lower. Otherwise we could have used:
-    //     context = document.getElementById('canvas').getContext("2d");
+	if (typeof G_vmlCanvasManager != 'undefined') {
+		canvas = G_vmlCanvasManager.initElement(canvas);
+	}
+	context = canvas.getContext("2d"); // Grab the 2d canvas context
+	console.log("SCALE=" + scaleFactor + "vw/vh=" + vw(100) + "/" + vh(100));
+	// Note: The above code is a workaround for IE 8 and lower. Otherwise we could have used:
+	//     context = document.getElementById('canvas').getContext("2d");
 
+	// Load images
+	// -----------
+	logoImage.onload = function () { resourceLoaded(); };
+	logoImage.src = "images/sense-logo0.png";
 
-    
-    // Load images
-    // -----------
-    logoImage.onload = function() { resourceLoaded();    };
-    logoImage.src = "images/sense-logo0.png";
+	bella.onload = function () { resourceLoaded(); };
+	bella.src = "images/bella_brown_right.png";
 
-    bella.onload = function() { resourceLoaded();    };
-    bella.src = "images/bella_brown_right.png";
-
-	barky.onload = function() { resourceLoaded(); };
+	barky.onload = function () { resourceLoaded(); };
 	barky.src = "images/barky_left.png";
-
 
 	// adding button
 	// Create the button element:
@@ -182,12 +177,12 @@ function prepareCanvas()
 
 	// Icon and text:
 	button1.innerHTML = '<i class="bi bi-bug"></i> Bella the Bumblebee';
-	
+
 	// Positioning:
 	button1.style.position = "absolute";
 	button1.style.left = canvasWidth * 0.18 + "px"; // One-third of canvas width
 	button1.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
-	
+
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
 
@@ -205,12 +200,12 @@ function prepareCanvas()
 
 	// Icon and text:
 	button2.innerHTML = '<i class="bi bi-tree"></i> Barky the Tree Bark';
-	
+
 	// Positioning:
 	button2.style.position = "absolute";
 	button2.style.left = canvasWidth * 0.66 + "px"; // One-third of canvas width
 	button2.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
-	
+
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
 
@@ -222,241 +217,229 @@ function prepareCanvas()
 		console.log("Button2 clicked!");
 		// Your code to execute when the button is clicked
 	});
-    
-   
-    // Add mouse events
-    // ----------------
-    $('#canvas').on("pointerdown", function(e){
-//	openFullscreen();
-	// Mouse down location
-	var mouseX = Math.round(e.pageX - this.offsetLeft);
-	var mouseY = Math.round(e.pageY - this.offsetTop);
-//	var mouseX = Math.round(e.originalEvent.touches[0].pageX - this.offsetLeft);
-//	var mouseY = Math.round(e.originalEvent.touches[0].pageY - this.offsetTop);
-	console.log("Canvas touched");
-	if(interfaceType=="canvas"){
-	    
-	    if(orient=="landscape"){
-		//check clicks in toolbar
-		
+
+	// Add mouse events
+	// ----------------
+	$('#canvas').on("pointerdown", function (e) {
+		//	openFullscreen();
 		// Mouse down location
-				
-		{
-		    // Mouse click location on drawing area
-		    if(curTool=="haptics"){
-			var t="null";
-			console.log("canvasX,canvasY="+canvasWidth+", "+canvasHeight);
-			console.log("x,y="+mouseX+", "+mouseY);
-			console.log(mouseX/canvasWidth, mouseY/canvasHeight);
-			
-			if (mouseX > canvasWidth*0.67 && mouseX < canvasWidth
-			    && mouseY > canvasHeight*0.5 && mouseY < canvasHeight){
-			    t="eyehex";
-				console.log("bbEyeZoomed");
-			    
-			}
-			else if (mouseX > canvasWidth*0.7 && mouseX < canvasWidth*0.9
-			    && mouseY > canvasHeight*0.1 && mouseY < canvasHeight*0.48 ){
-			    t="scales1";
-				console.log("bbEye2")
-			}
+		var mouseX = Math.round(e.pageX - this.offsetLeft);
+		var mouseY = Math.round(e.pageY - this.offsetTop);
+		//	var mouseX = Math.round(e.originalEvent.touches[0].pageX - this.offsetLeft);
+		//	var mouseY = Math.round(e.originalEvent.touches[0].pageY - this.offsetTop);
+		console.log("Canvas touched");
+		if (interfaceType == "canvas") {
 
-			else if (mouseX > canvasWidth*0.53 && mouseX < canvasWidth*0.58
-			    && mouseY > canvasHeight*0.41 && mouseY < canvasHeight*0.59 ){
-			    t="scales1";
-				console.log("bbEye1")
-			}
+			if (orient == "landscape") {
+				//check clicks in toolbar
 
-			else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.28
-			    && mouseY > canvasHeight*0.28 && mouseY < canvasHeight*0.96 ){
-			    t="sand";
-				console.log("pollenBasket")
-			}
+				// Mouse down location
+				{
+					// Mouse click location on drawing area
+					if (curTool == "haptics") {
+						var t = "null";
+						console.log("canvasX,canvasY=" + canvasWidth + ", " + canvasHeight);
+						console.log("x,y=" + mouseX + ", " + mouseY);
+						console.log(mouseX / canvasWidth, mouseY / canvasHeight);
 
-			else if (mouseX > 1 && mouseX < 200
-			    && mouseY > canvasHeight - 210 && mouseY < canvasHeight ){
-			    t=colorBuzz;
-				console.log("buzz")
-			}
+						if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
+							&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
+							t = "eyehex";
+							console.log("bbEyeZoomed");
 
-			else if (mouseX > canvasWidth*0.08 && mouseX < canvasWidth*0.2
-			    && mouseY > canvasHeight*0.08 && mouseY < canvasHeight*0.87 ){
-			    t=colorFur3;
-				console.log("fur1")
-			}
+						}
+						else if (mouseX > canvasWidth * 0.7 && mouseX < canvasWidth * 0.9
+							&& mouseY > canvasHeight * 0.1 && mouseY < canvasHeight * 0.48) {
+							t = "scales1";
+							console.log("bbEye2")
+						}
 
-			else if (mouseX > canvasWidth*0.2 && mouseX < canvasWidth*0.64
-			    && mouseY > canvasHeight*0.04 && mouseY < canvasHeight*0.4 ){
-			    t=colorFur2;
-				console.log("fur2")
-			}
+						else if (mouseX > canvasWidth * 0.53 && mouseX < canvasWidth * 0.58
+							&& mouseY > canvasHeight * 0.41 && mouseY < canvasHeight * 0.59) {
+							t = "scales1";
+							console.log("bbEye1")
+						}
 
-			console.log("tex="+t+" startaudio");
-			closeAudios(t);
-			if (t==colorSand){
-			    if (playSand == 0) { sand.play(); playSand = 1; };
-	    		}
-			else if (t==colorScales1){
-			    if (playScales == 0) { scales.play(); playScales = 1; };
-	    		}
-			else if (t==colorFur2){
-			    if (playFur2 == 0) { fur2.play(); playFur2 = 1; };
-	    		}
-			else if (t==colorFur3){
-			    if (playFur3 == 0) { fur3.play(); playFur3 = 1; };
-	    		}
+						else if (mouseX > canvasWidth * 0.21 && mouseX < canvasWidth * 0.28
+							&& mouseY > canvasHeight * 0.28 && mouseY < canvasHeight * 0.96) {
+							t = "sand";
+							console.log("pollenBasket")
+						}
 
-				else if (t==colorEye){
-					if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
+						else if (mouseX > 1 && mouseX < 200
+							&& mouseY > canvasHeight - 210 && mouseY < canvasHeight) {
+							t = colorBuzz;
+							console.log("buzz")
+						}
+
+						else if (mouseX > canvasWidth * 0.08 && mouseX < canvasWidth * 0.2
+							&& mouseY > canvasHeight * 0.08 && mouseY < canvasHeight * 0.87) {
+							t = colorFur3;
+							console.log("fur1")
+						}
+
+						else if (mouseX > canvasWidth * 0.2 && mouseX < canvasWidth * 0.64
+							&& mouseY > canvasHeight * 0.04 && mouseY < canvasHeight * 0.4) {
+							t = colorFur2;
+							console.log("fur2")
+						}
+
+						console.log("tex=" + t + " startaudio");
+						closeAudios(t);
+						if (t == colorSand) {
+							if (playSand == 0) { sand.play(); playSand = 1; };
+						}
+						else if (t == colorScales1) {
+							if (playScales == 0) { scales.play(); playScales = 1; };
+						}
+						else if (t == colorFur2) {
+							if (playFur2 == 0) { fur2.play(); playFur2 = 1; };
+						}
+						else if (t == colorFur3) {
+							if (playFur3 == 0) { fur3.play(); playFur3 = 1; };
+						}
+
+						else if (t == colorEye) {
+							if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
+						}
+						else if (t == colorBuzz) {
+							if (playBuzz == 0) { buzz.play(); playBuzz = 1; };
+						}
+
 					}
-			    else if (t == colorBuzz) {
-				    if (playBuzz ==0) {buzz.play(); playBuzz = 1; };
-			    }
-			
-		    }
-		}
-	    }
-
-	}
-    });
-	
-	
-    $('#canvas').on("pointermove", function(e){
-	if(e.buttons>0){
-	    var mouseX = Math.round(e.pageX - this.offsetLeft);
-	    var mouseY = Math.round(e.pageY - this.offsetTop);
-	    //var mouseX = Math.round(e.originalEvent.touches[0].pageX - this.offsetLeft);
-	    //var mouseY = Math.round(e.originalEvent.touches[0].pageY - this.offsetTop);
-	    if(curTool=="haptics"){
-		var t="null";
-		
-		if (mouseX > canvasWidth*0.67 && mouseX < canvasWidth
-			&& mouseY > canvasHeight*0.5 && mouseY < canvasHeight){
-			t="eyehex";
-			console.log("bbEyeZoomed");}
-
-		else if (mouseX > canvasWidth*0.7 && mouseX < canvasWidth*0.9
-			    && mouseY > canvasHeight*0.1 && mouseY < canvasHeight*0.48 ){
-			    t="scales1";
-				console.log("bbEye2")
-		}
-
-		else if (mouseX > canvasWidth*0.53 && mouseX < canvasWidth*0.58
-			&& mouseY > canvasHeight*0.41 && mouseY < canvasHeight*0.59 ){
-			t="scales1";
-			console.log("bbEye1")
-		}
-
-		else if (mouseX > canvasWidth*0.21 && mouseX < canvasWidth*0.28
-			&& mouseY > canvasHeight*0.28 && mouseY < canvasHeight*0.96 ){
-			t="sand";
-			console.log("pollenBasket")
-		}
-
-		else if (mouseX > 1 && mouseX < 200 && mouseY > canvasHeight - 210 && mouseY < canvasHeight - 10 ){
-			t=colorBuzz;
-			console.log("buzz")
+				}
 			}
 
-		else if (mouseX > canvasWidth*0.08 && mouseX < canvasWidth*0.2
-			&& mouseY > canvasHeight*0.08 && mouseY < canvasHeight*0.87 ){
-			t=colorFur3;
-			console.log("fur1")
 		}
+	});
 
-		else if (mouseX > canvasWidth*0.2 && mouseX < canvasWidth*0.64
-			&& mouseY > canvasHeight*0.04 && mouseY < canvasHeight*0.4 ){
-			t=colorFur2;
-			console.log("fur2")
-		}
+	$('#canvas').on("pointermove", function (e) {
+		if (e.buttons > 0) {
+			var mouseX = Math.round(e.pageX - this.offsetLeft);
+			var mouseY = Math.round(e.pageY - this.offsetTop);
+			//var mouseX = Math.round(e.originalEvent.touches[0].pageX - this.offsetLeft);
+			//var mouseY = Math.round(e.originalEvent.touches[0].pageY - this.offsetTop);
+			if (curTool == "haptics") {
+				var t = "null";
 
+				if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
+					&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
+					t = "eyehex";
+					console.log("bbEyeZoomed");
+				}
 
+				else if (mouseX > canvasWidth * 0.7 && mouseX < canvasWidth * 0.9
+					&& mouseY > canvasHeight * 0.1 && mouseY < canvasHeight * 0.48) {
+					t = "scales1";
+					console.log("bbEye2")
+				}
 
-		console.log("touchmove=" + t);
-		closeAudios(t);
+				else if (mouseX > canvasWidth * 0.53 && mouseX < canvasWidth * 0.58
+					&& mouseY > canvasHeight * 0.41 && mouseY < canvasHeight * 0.59) {
+					t = "scales1";
+					console.log("bbEye1")
+				}
 
-		if (t=="sand"){
-		    if (playSand == 0) { sand.play(); playSand = 1; };
-		}
-		else if (t=="scales1"){
-		    if (playScales == 0) { scales.play(); playScales = 1; };
-		}
-		else if (t=="fur2"){
-		    if (playFur2 == 0) { fur2.play(); playFur2 = 1; };
-		}
-		else if (t=="fur3"){
-		    if (playFur3 == 0) { fur3.play(); playFur3 = 1; };
-		}
+				else if (mouseX > canvasWidth * 0.21 && mouseX < canvasWidth * 0.28
+					&& mouseY > canvasHeight * 0.28 && mouseY < canvasHeight * 0.96) {
+					t = "sand";
+					console.log("pollenBasket")
+				}
 
-		else if (t== "eyehex"){
-			if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
+				else if (mouseX > 1 && mouseX < 200 && mouseY > canvasHeight - 210 && mouseY < canvasHeight - 10) {
+					t = colorBuzz;
+					console.log("buzz")
+				}
+
+				else if (mouseX > canvasWidth * 0.08 && mouseX < canvasWidth * 0.2
+					&& mouseY > canvasHeight * 0.08 && mouseY < canvasHeight * 0.87) {
+					t = colorFur3;
+					console.log("fur1")
+				}
+
+				else if (mouseX > canvasWidth * 0.2 && mouseX < canvasWidth * 0.64
+					&& mouseY > canvasHeight * 0.04 && mouseY < canvasHeight * 0.4) {
+					t = colorFur2;
+					console.log("fur2")
+				}
+
+				console.log("touchmove=" + t);
+				closeAudios(t);
+
+				if (t == "sand") {
+					if (playSand == 0) { sand.play(); playSand = 1; };
+				}
+				else if (t == "scales1") {
+					if (playScales == 0) { scales.play(); playScales = 1; };
+				}
+				else if (t == "fur2") {
+					if (playFur2 == 0) { fur2.play(); playFur2 = 1; };
+				}
+				else if (t == "fur3") {
+					if (playFur3 == 0) { fur3.play(); playFur3 = 1; };
+				}
+
+				else if (t == "eyehex") {
+					if (playEyeHex == 0) { eyeHex.play(); playEyeHex = 1; };
+				}
 			}
-	    }
 
-		     else if (t == "buzz") {
-				    if (playBuzz ==0) {buzz.play(); playBuzz = 1; };
-			    }
-	
-	    else{
-		console.log("close audios");
-		closeAudios("null");
-	    }
-	}
-    });
+			else if (t == "buzz") {
+				if (playBuzz == 0) { buzz.play(); playBuzz = 1; };
+			}
 
+			else {
+				console.log("close audios");
+				closeAudios("null");
+			}
+		}
+	});
 
-    $('#canvas').on("pointerup", function(e){
+	$('#canvas').on("pointerup", function (e) {
 		paint = false;
-		closeAudios("null"); 
-    });
-    
-    $('#canvas').on("pointercancel", function(e){
-	closeAudios("null");
-	paint = false;
-    });
-    $('#canvas').on("pointerout", function(e){
-	closeAudios("null");
-	paint = false;
-    });
-    $('#canvas').on("pointerleave", function(e){
-	closeAudios("null");
-	paint = false;
-    });
+		closeAudios("null");
+	});
 
-    redrawInterface("canvas");
+	$('#canvas').on("pointercancel", function (e) {
+		closeAudios("null");
+		paint = false;
+	});
+	$('#canvas').on("pointerout", function (e) {
+		closeAudios("null");
+		paint = false;
+	});
+	$('#canvas').on("pointerleave", function (e) {
+		closeAudios("null");
+		paint = false;
+	});
+
+	redrawInterface("canvas");
 }
 
+function closeAudios(t) {
 
-function closeAudios(t)
-{
-
-    if (t!="sand"){
-	if (playSand == 1) { sand.pause(); playSand = 0; };
-    }
-    if (t!="scales1"){
-	if (playScales == 1) { scales.pause(); playScales = 0; };
-    }
-    if (t!="fur2"){
-	if (playFur2 == 1) { fur2.pause(); playFur2 = 0; };
-    }
-    if (t!="fur3"){
-	if (playFur3 == 1) { fur3.pause(); playFur3 = 0; };
-    }
-
-	if (t!="eyehex") {
-		if (playEyeHex == 1) {eyeHex.pause(); playEyeHex = 0; };
+	if (t != "sand") {
+		if (playSand == 1) { sand.pause(); playSand = 0; };
+	}
+	if (t != "scales1") {
+		if (playScales == 1) { scales.pause(); playScales = 0; };
+	}
+	if (t != "fur2") {
+		if (playFur2 == 1) { fur2.pause(); playFur2 = 0; };
+	}
+	if (t != "fur3") {
+		if (playFur3 == 1) { fur3.pause(); playFur3 = 0; };
 	}
 
-	if (t!="buzz") {
-		if (playBuzz == 1) {buzz.pause(); playBuzz = 0; };
+	if (t != "eyehex") {
+		if (playEyeHex == 1) { eyeHex.pause(); playEyeHex = 0; };
 	}
 
-
+	if (t != "buzz") {
+		if (playBuzz == 1) { buzz.pause(); playBuzz = 0; };
+	}
 
 }
-
-
-
 
 /**
 * Adds a point to the drawing array.
@@ -465,73 +448,40 @@ function closeAudios(t)
 * @param dragging
 */
 
-
-
 /**
 * Clears the canvas.
 */
 
-
 /**
 * Redraws the interface.
 */
-function redrawInterface(intType)
-{
-    interfaceType=intType;
-    if(interfaceType=="canvas"){
-	canvasDiv.style.visibility = 'visible';
-    }
+function redrawInterface(intType) {
+	interfaceType = intType;
+	if (interfaceType == "canvas") {
+		canvasDiv.style.visibility = 'visible';
+	}
 
+	console.log("redrawing interface: inttype=" + interfaceType + " curtool=" + curTool);
 
-    console.log("redrawing interface: inttype=" + interfaceType +" curtool="+curTool) ;	
+	var locX;
+	var locY;
+	if (interfaceType == "canvas") {
 
-    
+		var yUnit = toolHeight / 10;
+		//draw toolbar
 
-    var locX;
-    var locY;
-    if(interfaceType=="canvas"){
+		//end toolbar
+		context.strokeStyle = '#70ba5d';
+		context.lineWidth = 10;
+		context.fillStyle = "#fff";
+		//draw canvas
+		context.fillRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
+		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
+		console.log("h=" + canvasHeight + " w=" + canvasWidth);
+		context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
+		context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
+		context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
 
-	var yUnit=toolHeight/10;
-	//draw toolbar
-	
-	
-	//end toolbar
-	context.strokeStyle = '#70ba5d';
-	context.lineWidth   = 10;
-	context.fillStyle = "#fff";
-	//draw canvas
-	context.fillRect(canvasX+5,5, canvasWidth, canvasHeight-10);
-	context.strokeRect(canvasX+5,5, canvasWidth, canvasHeight-10);
-	console.log("h="+canvasHeight+" w="+canvasWidth);
-	context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-	context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
-	context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
-
-	console.log("draw logo: h="+canvasHeight+" w="+canvasWidth);
-	
-    }
-    
-
-//	redrawCanvas();
+		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
+	}
 }
-
-/**
-* Redraws the canvas.
-*/
-function redrawCanvas()
-{
-//if(curLoadResNum < totalLoadResources){ return; }
-//    context.beginPath();
-//    context.rect(drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
-//    context.closePath();
-//    context.clip();
-    
-}
-
-
-/**/
-
-
-/**
-* Redraws the recent changes to canvas.
-*/
