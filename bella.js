@@ -168,26 +168,20 @@ function prepareCanvas() {
 
 	// Load images
 	// -----------
-	logoImage.onload = function () { resourceLoaded(); };
-	logoImage.src = "images/sense-logo0.png";
-
 	bella.onload = function () { resourceLoaded(); };
 	bella.src = "images/bella_brown_right.png";
-
-	barky.onload = function () { resourceLoaded(); };
-	barky.src = "images/barky_left.png";
 
 	// adding button
 	// Create the button element:
 	const button1 = document.createElement('button');
 
 	// Icon and text:
-	button1.innerHTML = '<i class="bi bi-bug"></i> Bella the Bumblebee';
+	button1.innerHTML = '<i class="bi bi-house"></i> Home';
 
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.18 + "px"; // One-third of canvas width
-	button1.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
+	button1.style.left = canvasWidth * 0.006 + "px"; // One-third of canvas width
+	button1.style.top = canvasHeight * 0.008 + "px"; // Half of canvas height
 
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -198,7 +192,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button1.addEventListener('click', () => {
 		console.log("Button1 clicked!");
-		window.location.href = "bella.html";
+		window.location.href = "index.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -206,12 +200,12 @@ function prepareCanvas() {
 	const button2 = document.createElement('button');
 
 	// Icon and text:
-	button2.innerHTML = '<i class="bi bi-tree"></i> Barky the Tree Bark';
+	button2.innerHTML = '<i class="bi bi-caret-right"></i> Next';
 
 	// Positioning:
 	button2.style.position = "absolute";
-	button2.style.left = canvasWidth * 0.66 + "px"; // One-third of canvas width
-	button2.style.top = canvasHeight * 0.77 + "px"; // Half of canvas height
+	button2.style.left = canvasWidth * 0.945 + "px"; // One-third of canvas width
+	button2.style.top = canvasHeight * 0.95 + "px"; // Half of canvas height
 
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -222,9 +216,32 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky.html";
+		window.location.href = "bella1.html";
 		// Your code to execute when the button is clicked
 	});
+
+	// Create a div element with the specified classes
+const contentDiv = document.createElement('div');
+contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h1');
+
+// Create the text content with line breaks
+const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready to lend a helping hand to her friends. Come along and discover the amazing textures that help Bella thrive in her world.';
+
+// Add the text content to the div element
+contentDiv.textContent = contentText;
+
+	// Positioning:
+	contentDiv.style.position = "absolute";
+	contentDiv.style.left = canvasWidth * 0.5 + "px";
+	contentDiv.style.top = canvasHeight * 0.001 + "px";
+
+	// Margin and padding:
+contentDiv.style.margin = "20px"; // Adjust values as needed
+contentDiv.style.padding = "15px"; // Adjust values as needed
+
+// Append the div element to the desired location in your DOM
+canvasDiv.appendChild(contentDiv);
+
 
 	// Add mouse events
 	// ----------------
@@ -256,13 +273,6 @@ function prepareCanvas() {
 							t = colorBuzz;
 							console.log(t)
 							}
-						
-							else if (mouseX > canvasWidth * 0.6 && mouseX < canvasWidth * 0.9
-								&& mouseY > canvasHeight * 0.25 
-								&& mouseY < canvasHeight * 0.73) {
-								t = colorBark;
-								console.log(t)
-								}
 
 						/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 							&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
@@ -354,13 +364,7 @@ function prepareCanvas() {
 					t = colorBuzz;
 					console.log(t)
 					}
-				
-					else if (mouseX > canvasWidth * 0.6 && mouseX < canvasWidth * 0.9
-						&& mouseY > canvasHeight * 0.25 
-						&& mouseY < canvasHeight * 0.73) {
-						t = colorBark;
-						console.log(t)
-						}
+			
 
 				/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 					&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
@@ -526,9 +530,9 @@ function redrawInterface(intType) {
 		context.fillRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
-		context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
+		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
 		context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
-		context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
+		//context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}
