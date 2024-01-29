@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/Scaly lr.mp4');
+var buzz = new Audio('audio/Scaly lr.m4a');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
