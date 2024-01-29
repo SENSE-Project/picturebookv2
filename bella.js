@@ -181,7 +181,7 @@ function prepareCanvas() {
 	// Positioning:
 	button1.style.position = "absolute";
 	button1.style.left = canvasWidth * 0.8 + "px"; // One-third of canvas width
-	button1.style.top = canvasHeight * 0.8 + "px"; // Half of canvas height
+	button1.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -205,7 +205,7 @@ function prepareCanvas() {
 	// Positioning:
 	button2.style.position = "absolute";
 	button2.style.left = canvasWidth * 0.9 + "px"; // One-third of canvas width
-	button2.style.top = canvasHeight * 0.8 + "px"; // Half of canvas height
+	button2.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
