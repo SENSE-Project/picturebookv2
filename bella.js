@@ -180,8 +180,8 @@ function prepareCanvas() {
 
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.006 + "px"; // One-third of canvas width
-	button1.style.top = canvasHeight * 0.008 + "px"; // Half of canvas height
+	button1.style.left = canvasWidth * 0.8 + "px"; // One-third of canvas width
+	button1.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -204,8 +204,8 @@ function prepareCanvas() {
 
 	// Positioning:
 	button2.style.position = "absolute";
-	button2.style.left = canvasWidth * 0.945 + "px"; // One-third of canvas width
-	button2.style.top = canvasHeight * 0.95 + "px"; // Half of canvas height
+	button2.style.left = canvasWidth * 0.9 + "px"; // One-third of canvas width
+	button2.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -222,10 +222,10 @@ function prepareCanvas() {
 
 	// Create a div element with the specified classes
 const contentDiv = document.createElement('div');
-contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h1');
+contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready to lend a helping hand to her friends. Come along and discover the amazing textures that help Bella thrive in her world.';
+const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready.';
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
