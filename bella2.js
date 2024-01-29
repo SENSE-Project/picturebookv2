@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/bumblebee.mp4');
+var buzz = new Audio('audio/fur2.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -172,7 +172,7 @@ function prepareCanvas() {
 	bella.src = "images/bella_brown_left.png";
 
 	main.onload = function () { resourceLoaded(); };
-	main.src = "images/bumblebee_fur_1000x704.jpg"; 
+	main.src = "images/bumblebee_fur_1000x704.jpg";
 
 	// adding button
 	// Create the button element:
@@ -183,8 +183,8 @@ function prepareCanvas() {
 
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.006 + "px"; // One-third of canvas width
-	button1.style.top = canvasHeight * 0.008 + "px"; // Half of canvas height
+	button1.style.left = canvasWidth * 0.7 + "px"; // One-third of canvas width
+	button1.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button1.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -207,8 +207,8 @@ function prepareCanvas() {
 
 	// Positioning:
 	button2.style.position = "absolute";
-	button2.style.left = canvasWidth * 0.945 + "px"; // One-third of canvas width
-	button2.style.top = canvasHeight * 0.95 + "px"; // Half of canvas height
+	button2.style.left = canvasWidth * 0.9 + "px"; // One-third of canvas width
+	button2.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button2.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -231,8 +231,8 @@ function prepareCanvas() {
 
 	// Positioning:
 	button3.style.position = "absolute";
-	button3.style.left = canvasWidth * 0.89 + "px"; // One-third of canvas width
-	button3.style.top = canvasHeight * 0.95 + "px"; // Half of canvas height
+	button3.style.left = canvasWidth * 0.8 + "px"; // One-third of canvas width
+	button3.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
 	button3.classList.add("btn", "btn-lg", "btn-outline-success");
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Why do bumblebees make a buzzing sound? Buzzing is my business! But let me tell you, it's not just about flapping my wings like crazy, though that's part of it, believe me! My wings whizzing that fast makes a real racket, like a tiny helicopter taking off. Bzzz! Bzzz! You hear that? That's me zooming through the air, my wings going like little feathered fans. But sometimes, I do a different kind of buzz. It's not the whirring of my wings, but a deeper rumble that comes from inside me, like a tiny drum in my thorax. That's my special secret weapon: my buzz muscles! Some flowers just love it! There are these amazing flowers that only release their pollen when they get a good buzzing. My special rumble tickles the pollen right out of them, and then whoosh! I scoop it up with my fuzzy legs and off I go, a pollen pirate with a treasure chest full of bee-gold! So, the next time you hear a bumblebee buzzing, remember, it's not just a noisy bee having fun. It's a tiny dancer shaking pollen loose, a secret code to unlock flower feasts, and maybe, just maybe, a little helping hand to make those yummy tomatoes and blueberries grow in your garden! Remember, buzzing is more than just noise. It's a bee's superpower, a flower's secret wish, and a tiny symphony that helps our whole world bloom! Now, if you'll excuse me, my buzz muscles are warming up! Bzzz! See you in the garden!";
+const contentText = "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
@@ -557,8 +557,8 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		context.drawImage(bella, canvasWidth * 0.7, canvasHeight * 0.6, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
-		context.drawImage(main, canvasWidth * 0.006, canvasHeight * 0.06, canvasWidth * 0.5, canvasHeight * 0.925);
+		context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
+		context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.03, canvasWidth * 0.5, canvasHeight * 0.95);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}
