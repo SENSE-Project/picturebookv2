@@ -225,7 +225,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h1');
 
 // Create the text content with line breaks
-const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready to lend a helping hand to her friends. Come along and discover the amazing textures that help Bella thrive in her world.';
+const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready.';
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
