@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Why do bumblebees make a buzzing sound? Buzzing is my business! But let me tell you, it's not just about flapping my wings like crazy, though that's part of it.";
+const contentText = "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
@@ -558,7 +558,7 @@ function redrawInterface(intType) {
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
 		context.drawImage(bella, canvasWidth * 0.6, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
-		context.drawImage(main, canvasWidth * 0.006, canvasHeight * 0.01, canvasWidth * 0.5, canvasHeight * 0.925);
+		context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.05, canvasWidth * 0.5, canvasHeight * 0.96);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}

@@ -222,7 +222,7 @@ function prepareCanvas() {
 
 	// Create a div element with the specified classes
 const contentDiv = document.createElement('div');
-contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h1');
+contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
 const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes. Bella\'s heart is as big as her buzz, and she\'s always ready.';
