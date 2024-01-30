@@ -321,7 +321,7 @@ function prepareCanvas() {
 	//formDiv.appendChild(form);
 
 	// Create the heading
-	const heading = document.createElement('h1');
+	const heading = document.createElement('h5');
 	heading.textContent = 'Bumblebee Quiz';
 	heading.classList.add('text-center', 'mt-4', 'mb-3');
 
@@ -336,7 +336,7 @@ function prepareCanvas() {
 	const questionItem = document.createElement('li');
 	questionItem.classList.add('list-group-item');
 
-	const questionText = document.createElement('h3');
+	const questionText = document.createElement('p');
 	//questionText.classList.add('m-3', 'p-3');
 	questionText.textContent = '1. Why do bumblebees wear fuzzy coats?';
 	questionItem.appendChild(questionText);
@@ -350,7 +350,7 @@ function prepareCanvas() {
 	];
 	optionLabels.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
@@ -369,7 +369,7 @@ function prepareCanvas() {
 	const questionItem2 = document.createElement('li');
 	questionItem2.classList.add('list-group-item');
 
-	const questionText2 = document.createElement('h3');
+	const questionText2 = document.createElement('h6');
 	//questionText2.classList.add('m-3', 'p-3');
 	questionText2.textContent = '2. What is the purpose of the bright colors on a bumblebee\'s fur?';
 	questionItem2.appendChild(questionText2);
@@ -383,7 +383,7 @@ function prepareCanvas() {
 	];
 	optionLabels2.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
@@ -402,7 +402,7 @@ function prepareCanvas() {
 	const questionItem3 = document.createElement('li');
 	questionItem3.classList.add('list-group-item');
 
-	const questionText3 = document.createElement('h3');
+	const questionText3 = document.createElement('h6');
 	//questionText3.classList.add('mb-3');
 	questionText3.textContent = '3. How do bumblebees communicate with their buzzing sound?';
 	questionItem3.appendChild(questionText3);
@@ -416,7 +416,7 @@ function prepareCanvas() {
 	];
 	optionLabels3.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
@@ -436,7 +436,7 @@ function prepareCanvas() {
 	const questionItem4 = document.createElement('li');
 	questionItem4.classList.add('list-group-item');
 
-	const questionText4 = document.createElement('h3');
+	const questionText4 = document.createElement('h6');
 	//questionText4.classList.add('mb-3');
 	questionText4.textContent = '3. How do bumblebees communicate with their buzzing sound?';
 	questionItem4.appendChild(questionText4);
@@ -450,7 +450,7 @@ function prepareCanvas() {
 	];
 	optionLabels4.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
@@ -470,7 +470,7 @@ function prepareCanvas() {
 	const questionItem5 = document.createElement('li');
 	questionItem5.classList.add('list-group-item');
 
-	const questionText5 = document.createElement('h3');
+	const questionText5 = document.createElement('h6');
 	//questionText5.classList.add('mb-3');
 	questionText5.textContent = '3. How do bumblebees communicate with their buzzing sound?';
 	questionItem5.appendChild(questionText5);
@@ -484,7 +484,7 @@ function prepareCanvas() {
 	];
 	optionLabels5.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
@@ -504,7 +504,7 @@ function prepareCanvas() {
 	const questionItem6 = document.createElement('li');
 	questionItem6.classList.add('list-group-item');
 
-	const questionText6 = document.createElement('h3');
+	const questionText6 = document.createElement('h6');
 	//questionText6.classList.add('mb-3');
 	questionText6.textContent = '3. How do bumblebees communicate with their buzzing sound?';
 	questionItem6.appendChild(questionText6);
@@ -518,7 +518,7 @@ function prepareCanvas() {
 	];
 	optionLabels6.forEach(option => {
 		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'h3', 'm-3', 'p-3');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
 
 		const radioInput = document.createElement('input');
 		radioInput.type = 'radio';
