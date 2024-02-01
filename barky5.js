@@ -43,7 +43,7 @@ var colorBark = "bark";
 var logoImage = new Image();
 
 var bella = new Image();
-var barky = new Image();
+var main = new Image();
 
 var crayonPattern;
 var clickX = new Array();
@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/Tree bark 2 lr.mp4');
+var buzz = new Audio('audio/Scaly lr.m4a');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -169,7 +169,10 @@ function prepareCanvas() {
 	// Load images
 	// -----------
 	bella.onload = function () { resourceLoaded(); };
-	bella.src = "images/barky_right.png";
+	bella.src = "images/barky_left.png";
+
+	main.onload = function () { resourceLoaded(); };
+	main.src = "images/bumblebee_pollen_basket_1000x933.jpg";
 
 	// adding button
 	// Create the button element:
@@ -196,7 +199,7 @@ function prepareCanvas() {
 		// Your code to execute when the button is clicked
 	});
 
-	// Create the button element:
+	/* // Create the button element:
 	const button2 = document.createElement('button');
 
 	// Icon and text:
@@ -216,31 +219,291 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky1.html";
+		window.location.href = "bella6.html";
+		// Your code to execute when the button is clicked
+	}); */
+
+	// Create the button element:
+	const button3 = document.createElement('button');
+
+	// Icon and text:
+	button3.innerHTML = '<i class="bi bi-caret-left"></i> Back';
+
+	// Positioning:
+	button3.style.position = "absolute";
+	button3.style.left = canvasWidth * 0.9 + "px"; // One-third of canvas width
+	button3.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
+
+	// Styling:
+	button3.classList.add("btn", "btn-lg", "btn-outline-success");
+
+	// Add the button to the canvas's parent element:
+	canvasDiv.appendChild(button3);
+
+	// Add an event listener for the button click:
+	button3.addEventListener('click', () => {
+		console.log("Button3 clicked!");
+		window.location.href = "barky4.html";
 		// Your code to execute when the button is clicked
 	});
 
-	// Create a div element with the specified classes
-const contentDiv = document.createElement('div');
-contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
+	/* 	// Create the button element:
+		const button4 = document.createElement('button');
 
-// Create the text content with line breaks
-const contentText = 'Join Barky, the wise tree bark, as he stands tall through seasons and shares his stories with you.';
+		// Icon and text:
+		button4.innerHTML = 'Submit';
+	
+		// Positioning:
+		button4.style.position = "absolute";
+		button4.style.left = canvasWidth * 0.7 + "px"; // One-third of canvas width
+		button4.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
+	
+		// Styling:
+		button4.classList.add("btn", "btn-lg", "btn-success");
+	
+		// Add the button to the canvas's parent element:
+		canvasDiv.appendChild(button4);
+	
+		// Add an event listener for the button click:
+		button4.addEventListener('click', () => {
+			console.log("Button4 clicked!");
+			submitQuiz();  // Call the submitQuiz function
+		});
 
-// Add the text content to the div element
-contentDiv.textContent = contentText;
+
+			// Create the result display area
+	const resultDiv = document.createElement('div');
+	resultDiv.id = 'result';
+	resultDiv.classList.add('alert', 'alert-success', 'mt-3');
+	resultDiv.role = 'alert';
+	resultDiv.textContent = 'Your score will be displayed here.';
+
+		// Positioning:
+		resultDiv.style.position = "absolute";
+		resultDiv.style.left = canvasWidth * 0.9 + "px";
+		resultDiv.style.top = canvasHeight * 0.001 + "px";
+	
+		// Margin and padding:
+	resultDiv.style.margin = "20px"; // Adjust values as needed
+	resultDiv.style.padding = "15px"; // Adjust values as needed
+	
+	// Append the div element to the desired location in your DOM
+	canvasDiv.appendChild(resultDiv); */
+
+	/* 
+		// Create a div element with the specified classes
+		const contentDiv = document.createElement('div');
+		contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
+	
+		// Create the text content with line breaks
+		const contentText = "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15 word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12 word13 word14 word15";
+	
+		// Add the text content to the div element
+		contentDiv.textContent = contentText;
+	
+		// Positioning:
+		contentDiv.style.position = "absolute";
+		contentDiv.style.left = canvasWidth * 0.001 + "px";
+		contentDiv.style.top = canvasHeight * 0.001 + "px";
+	
+		// Margin and padding:
+		contentDiv.style.margin = "20px"; // Adjust values as needed
+		contentDiv.style.padding = "15px"; // Adjust values as needed
+	
+		// Append the div element to the desired location in your DOM
+		canvasDiv.appendChild(contentDiv); */
+
+
+	// Create the form element
+	const form = document.createElement('div');
+	form.id = 'myForm';
+
+	//formDiv.appendChild(form);
+
+	// Create the heading
+	const heading = document.createElement('h1');
+	heading.textContent = 'Tree Bark Activity';
+	heading.classList.add('text-center', 'mt-4', 'mb-3');
+
+	// Add the heading to the form
+	form.appendChild(heading);
+
+	const bodytext1 = document.createElement('h3');
+	bodytext1.textContent = "Hey there, little explorer! Lets go on a tree bark adventure!";
+	bodytext1.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext1);
+
+	const bodytext2 = document.createElement('h5');
+	bodytext2.textContent = 'Where can you see trees in your area? A nearby park, garden or wooded area?';
+	bodytext2.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext2);
+
+	const bodytext3 = document.createElement('h5');
+	bodytext3.textContent = 'Look for trees with unique bark patterns. Touch and feel the different textures.';
+	bodytext3.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext3);
+
+	const bodytext4 = document.createElement('h5');
+	bodytext4.textContent = 'Hold a piece of white paper against a tree trunk. Choose a crayon colour of your choice.';
+	bodytext4.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext4);
+
+	const bodytext5 = document.createElement('h5');
+	bodytext5.textContent = 'Gently rub the crayon over the paper while it is against the tree bark. The texture of the bark will transfer onto the paper, creating a beautiful pattern.';
+	bodytext5.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext5);
+
+	const bodytext6 = document.createElement('h5');
+	bodytext6.textContent = 'Repeat the process with other trees. Notice how each tree has a unique bark design. Compare the rubbings and talk about what you see.';
+	bodytext6.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext6);
+
+	const bodytext7 = document.createElement('h5');
+	bodytext7.textContent = 'Once you have made several bark rubbings, admire your collection! Display them at school or home, like a mini tree bark texture gallery.';
+	bodytext7.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext7);
+
+
+	/* // Create the list of questions
+	const listGroup = document.createElement('ol');
+	listGroup.classList.add('list-group');
+
+	// Create the first question
+	const questionItem = document.createElement('li');
+	questionItem.classList.add('list-group-item');
+
+	const questionText = document.createElement('p');
+	//questionText.classList.add('m-3', 'p-3');
+	questionText.textContent = '1. Why do bumblebees wear fuzzy coats?';
+	questionItem.appendChild(questionText);
+
+	// Create radio buttons for options
+	const optionLabels = [
+		'   a) To fly faster   ',
+		'   b) To stay warm   ',
+		'   c) For camouflage   ',
+		'   d) Fashion statement   '
+	];
+	optionLabels.forEach(option => {
+		const label = document.createElement('label');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
+
+		const radioInput = document.createElement('input');
+		radioInput.type = 'radio';
+		radioInput.classList.add('form-check-input');
+		radioInput.name = 'q1'; // Assuming this is the name for the question
+		radioInput.required = true; // Add validation
+
+		label.appendChild(radioInput);
+		label.appendChild(document.createTextNode(option));
+		questionItem.appendChild(label);
+	});
+
+	listGroup.appendChild(questionItem);
+
+	// Create the second question
+	const questionItem2 = document.createElement('li');
+	questionItem2.classList.add('list-group-item');
+
+	const questionText2 = document.createElement('h6');
+	//questionText2.classList.add('m-3', 'p-3');
+	questionText2.textContent = '2. What is the purpose of the bright colors on a bumblebee\'s fur?';
+	questionItem2.appendChild(questionText2);
+
+	// Create radio buttons for options
+	const optionLabels2 = [
+		'a) Attracting mates',
+		'b) To warn other animals',
+		'c) Reflecting sunlight',
+		'd) Expressing emotions'
+	];
+	optionLabels2.forEach(option => {
+		const label = document.createElement('label');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
+
+		const radioInput = document.createElement('input');
+		radioInput.type = 'radio';
+		radioInput.classList.add('form-check-input');
+		radioInput.name = 'q2'; // Name for the second question
+		radioInput.required = true;
+
+		label.appendChild(radioInput);
+		label.appendChild(document.createTextNode(option));
+		questionItem2.appendChild(label);
+	});
+
+	listGroup.appendChild(questionItem2);
+
+	// Create the third question
+	const questionItem3 = document.createElement('li');
+	questionItem3.classList.add('list-group-item');
+
+	const questionText3 = document.createElement('h6');
+	//questionText3.classList.add('mb-3');
+	questionText3.textContent = '3. How do bumblebees communicate with their buzzing sound?';
+	questionItem3.appendChild(questionText3);
+
+	// Create radio buttons for options
+	const optionLabels3 = [
+		'a) Celebrating',
+		'b) Warning of danger',
+		'c) They are talking to other bees',
+		'd) Expressing happiness'
+	];
+	optionLabels3.forEach(option => {
+		const label = document.createElement('label');
+		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
+
+		const radioInput = document.createElement('input');
+		radioInput.type = 'radio';
+		radioInput.classList.add('form-check-input');
+		radioInput.name = 'q3'; // Name for the second question
+		radioInput.required = true;
+
+		label.appendChild(radioInput);
+		label.appendChild(document.createTextNode(option));
+		questionItem3.appendChild(label);
+	});
+
+	listGroup.appendChild(questionItem3); */
+
+	//form.appendChild(listGroup);
+
+/* 	// Create the submit button
+	const submitButton = document.createElement('button');
+	submitButton.classList.add('btn', 'btn-success', 'btn-lg', 'mt-3');
+	submitButton.type = 'button'; // Use a button type for better control
+	submitButton.textContent = 'Submit';
+	submitButton.addEventListener('click', submitQuiz);
+
+	// Create the result display area
+	const resultDiv = document.createElement('div');
+	resultDiv.id = 'result';
+	resultDiv.classList.add('alert', 'alert-success', 'mt-3');
+	resultDiv.role = 'alert';
+	resultDiv.textContent = 'Your score will be displayed here.';
+
+	// Append the button and result area to the form
+	form.appendChild(resultDiv); */
 
 	// Positioning:
-	contentDiv.style.position = "absolute";
-	contentDiv.style.left = canvasWidth * 0.5 + "px";
-	contentDiv.style.top = canvasHeight * 0.001 + "px";
+	form.style.position = "absolute";
+	form.style.left = canvasWidth * 0.001 + "px";
+	form.style.top = canvasHeight * 0.001 + "px";
 
 	// Margin and padding:
-contentDiv.style.margin = "20px"; // Adjust values as needed
-contentDiv.style.padding = "15px"; // Adjust values as needed
+	form.style.margin = "20px"; // Adjust values as needed
+	form.style.padding = "15px"; // Adjust values as needed
 
-// Append the div element to the desired location in your DOM
-canvasDiv.appendChild(contentDiv);
+	// Append the form to the body
+	canvasDiv.appendChild(form);
 
 
 	// Add mouse events
@@ -267,12 +530,12 @@ canvasDiv.appendChild(contentDiv);
 						console.log("x,y=" + mouseX + ", " + mouseY);
 						console.log(mouseX / canvasWidth, mouseY / canvasHeight);
 
-						if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
-							&& mouseY > canvasHeight * 0.36 
-							&& mouseY < canvasHeight * 0.74) {
+						if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
+							&& mouseY > canvasHeight * 0.06
+							&& mouseY < canvasHeight * 0.99) {
 							t = colorBuzz;
 							console.log(t)
-							}
+						}
 
 						/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 							&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
@@ -358,13 +621,13 @@ canvasDiv.appendChild(contentDiv);
 			if (curTool == "haptics") {
 				var t = "null";
 
-				if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
-					&& mouseY > canvasHeight * 0.36 
-					&& mouseY < canvasHeight * 0.74) {
+				if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
+					&& mouseY > canvasHeight * 0.06
+					&& mouseY < canvasHeight * 0.99) {
 					t = colorBuzz;
 					console.log(t)
-					}
-			
+				}
+
 
 				/* if (mouseX > canvasWidth * 0.67 && mouseX < canvasWidth
 					&& mouseY > canvasHeight * 0.5 && mouseY < canvasHeight) {
@@ -462,7 +725,7 @@ canvasDiv.appendChild(contentDiv);
 	});
 
 	redrawInterface("canvas");
-}
+};
 
 function closeAudios(t) {
 
@@ -489,9 +752,9 @@ function closeAudios(t) {
 
 	if (t != colorBark) {
 		if (playBark_sound == 1) { bark_sound.pause(); playBark_sound = 0; };
-	} 
+	}
 
-}
+};
 
 /**
 * Adds a point to the drawing array.
@@ -531,9 +794,33 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
-		//context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
+		context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
+		//context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.03, canvasWidth * 0.5, canvasHeight * 0.95);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}
-}
+};
+
+function submitQuiz() {
+	const correctAnswers = ["b", "b", "c", "b", "c", "c"]; // Adjust for correct answers
+	let score = 0;
+  
+	const listGroup = document.querySelector('ol.list-group');
+	const questionItems = listGroup.querySelectorAll('li');
+  
+	for (let i = 0; i < questionItems.length; i++) {
+	  const selectedAnswer = questionItems[i].querySelector('input:checked');
+	  if (selectedAnswer && selectedAnswer.value === correctAnswers[i]) {
+		score++;
+	  }
+	}
+  
+	const resultElement = document.getElementById("result");
+	resultElement.textContent = `You got ${score} out of ${questionItems.length} correct. The correct answers are given below:`;
+  
+	// Display correct answers
+	for (let i = 0; i < questionItems.length; i++) {
+	  const correctAnswer = questionItems[i].querySelector(`input[value="${correctAnswers[i]}"]`).parentNode.textContent;
+	  resultElement.innerHTML += `<br><strong>Question ${i + 1}:</strong> ${correctAnswer}`;
+	}
+  };
