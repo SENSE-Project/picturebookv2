@@ -247,7 +247,7 @@ function prepareCanvas() {
 		// Your code to execute when the button is clicked
 	});
 
-		// Create the button element:
+	/* 	// Create the button element:
 		const button4 = document.createElement('button');
 
 		// Icon and text:
@@ -288,7 +288,7 @@ function prepareCanvas() {
 	resultDiv.style.padding = "15px"; // Adjust values as needed
 	
 	// Append the div element to the desired location in your DOM
-	canvasDiv.appendChild(resultDiv);
+	canvasDiv.appendChild(resultDiv); */
 
 	/* 
 		// Create a div element with the specified classes
@@ -315,20 +315,57 @@ function prepareCanvas() {
 
 
 	// Create the form element
-	const form = document.createElement('form');
+	const form = document.createElement('div');
 	form.id = 'myForm';
 
 	//formDiv.appendChild(form);
 
 	// Create the heading
-	const heading = document.createElement('h5');
-	heading.textContent = 'Bumblebee Quiz';
+	const heading = document.createElement('h1');
+	heading.textContent = 'Bumblebee Survey';
 	heading.classList.add('text-center', 'mt-4', 'mb-3');
 
 	// Add the heading to the form
 	form.appendChild(heading);
 
-	// Create the list of questions
+	const bodytext1 = document.createElement('h3');
+	bodytext1.textContent = "Hey there, little explorer! Lets go on a bumblebee adventure!";
+	bodytext1.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext1);
+
+	const bodytext2 = document.createElement('h5');
+	bodytext2.textContent = 'Imagine you are a bee detective! Gather your friends, find a garden near you.';
+	bodytext2.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext2);
+
+	const bodytext3 = document.createElement('h5');
+	bodytext3.textContent = 'For 30 minutes, watch carefully. How many bumblebees can you spot? Buzz, buzz!';
+	bodytext3.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext3);
+
+	const bodytext4 = document.createElement('h5');
+	bodytext4.textContent = 'Do you notice more bees in spring or summer? Keep track! Maybe the bees love sunny days.';
+	bodytext4.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext4);
+
+	const bodytext5 = document.createElement('h5');
+	bodytext5.textContent = 'Look closely at the flowers. Which ones do the bees visit most? Maybe they have a favorite colour or smell!';
+	bodytext5.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext5);
+
+	const bodytext6 = document.createElement('h5');
+	bodytext6.textContent = 'Now, lets visit another garden near you. Count the bees there too. Which place do the bumblebees like better?';
+	bodytext6.classList.add('text-center', 'mt-4', 'mb-3');
+
+	form.appendChild(bodytext6);
+
+
+	/* // Create the list of questions
 	const listGroup = document.createElement('ol');
 	listGroup.classList.add('list-group');
 
@@ -429,9 +466,9 @@ function prepareCanvas() {
 		questionItem3.appendChild(label);
 	});
 
-	listGroup.appendChild(questionItem3);
+	listGroup.appendChild(questionItem3); */
 
-	form.appendChild(listGroup);
+	//form.appendChild(listGroup);
 
 /* 	// Create the submit button
 	const submitButton = document.createElement('button');
@@ -751,7 +788,7 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		//context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
+		context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
 		//context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.03, canvasWidth * 0.5, canvasHeight * 0.95);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
