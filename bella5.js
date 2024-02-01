@@ -183,7 +183,7 @@ function prepareCanvas() {
 
 	// Positioning:
 	button1.style.position = "absolute";
-	button1.style.left = canvasWidth * 0.7 + "px"; // One-third of canvas width
+	button1.style.left = canvasWidth * 0.8 + "px"; // One-third of canvas width
 	button1.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
@@ -199,7 +199,7 @@ function prepareCanvas() {
 		// Your code to execute when the button is clicked
 	});
 
-	// Create the button element:
+	/* // Create the button element:
 	const button2 = document.createElement('button');
 
 	// Icon and text:
@@ -221,7 +221,7 @@ function prepareCanvas() {
 		console.log("Button2 clicked!");
 		window.location.href = "bella6.html";
 		// Your code to execute when the button is clicked
-	});
+	}); */
 
 	// Create the button element:
 	const button3 = document.createElement('button');
@@ -231,7 +231,7 @@ function prepareCanvas() {
 
 	// Positioning:
 	button3.style.position = "absolute";
-	button3.style.left = canvasWidth * 0.8 + "px"; // One-third of canvas width
+	button3.style.left = canvasWidth * 0.9 + "px"; // One-third of canvas width
 	button3.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 
 	// Styling:
@@ -255,7 +255,7 @@ function prepareCanvas() {
 	
 		// Positioning:
 		button4.style.position = "absolute";
-		button4.style.left = canvasWidth * 0.4 + "px"; // One-third of canvas width
+		button4.style.left = canvasWidth * 0.7 + "px"; // One-third of canvas width
 		button4.style.top = canvasHeight * 0.9 + "px"; // Half of canvas height
 	
 		// Styling:
@@ -430,108 +430,6 @@ function prepareCanvas() {
 	});
 
 	listGroup.appendChild(questionItem3);
-
-
-	// Create the fourth question
-	const questionItem4 = document.createElement('li');
-	questionItem4.classList.add('list-group-item');
-
-	const questionText4 = document.createElement('h6');
-	//questionText4.classList.add('mb-3');
-	questionText4.textContent = '3. How do bumblebees communicate with their buzzing sound?';
-	questionItem4.appendChild(questionText4);
-
-	// Create radio buttons for options
-	const optionLabels4 = [
-		'a) Celebrating',
-		'b) Warning of danger',
-		'c) They are talking to other bees',
-		'd) Expressing happiness'
-	];
-	optionLabels4.forEach(option => {
-		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
-
-		const radioInput = document.createElement('input');
-		radioInput.type = 'radio';
-		radioInput.classList.add('form-check-input');
-		radioInput.name = 'q4'; // Name for the second question
-		radioInput.required = true;
-
-		label.appendChild(radioInput);
-		label.appendChild(document.createTextNode(option));
-		questionItem4.appendChild(label);
-	});
-
-	listGroup.appendChild(questionItem4);
-
-
-	// Create the fifth question
-	const questionItem5 = document.createElement('li');
-	questionItem5.classList.add('list-group-item');
-
-	const questionText5 = document.createElement('h6');
-	//questionText5.classList.add('mb-3');
-	questionText5.textContent = '3. How do bumblebees communicate with their buzzing sound?';
-	questionItem5.appendChild(questionText5);
-
-	// Create radio buttons for options
-	const optionLabels5 = [
-		'a) Celebrating',
-		'b) Warning of danger',
-		'c) They are talking to other bees',
-		'd) Expressing happiness'
-	];
-	optionLabels5.forEach(option => {
-		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
-
-		const radioInput = document.createElement('input');
-		radioInput.type = 'radio';
-		radioInput.classList.add('form-check-input');
-		radioInput.name = 'q5'; // Name for the second question
-		radioInput.required = true;
-
-		label.appendChild(radioInput);
-		label.appendChild(document.createTextNode(option));
-		questionItem5.appendChild(label);
-	});
-
-	listGroup.appendChild(questionItem5);
-
-
-	// Create the sixth question
-	const questionItem6 = document.createElement('li');
-	questionItem6.classList.add('list-group-item');
-
-	const questionText6 = document.createElement('h6');
-	//questionText6.classList.add('mb-3');
-	questionText6.textContent = '3. How do bumblebees communicate with their buzzing sound?';
-	questionItem6.appendChild(questionText6);
-
-	// Create radio buttons for options
-	const optionLabels6 = [
-		'a) Celebrating',
-		'b) Warning of danger',
-		'c) They are talking to other bees',
-		'd) Expressing happiness'
-	];
-	optionLabels6.forEach(option => {
-		const label = document.createElement('label');
-		label.classList.add('form-check-label', 'p', 'm-3', 'p-3');
-
-		const radioInput = document.createElement('input');
-		radioInput.type = 'radio';
-		radioInput.classList.add('form-check-input');
-		radioInput.name = 'q6'; // Name for the second question
-		radioInput.required = true;
-
-		label.appendChild(radioInput);
-		label.appendChild(document.createTextNode(option));
-		questionItem6.appendChild(label);
-	});
-
-	listGroup.appendChild(questionItem6);
 
 	form.appendChild(listGroup);
 
