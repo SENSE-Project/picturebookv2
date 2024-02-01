@@ -788,7 +788,7 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
+		context.drawImage(bella, canvasWidth * 0.8, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
 		//context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.03, canvasWidth * 0.5, canvasHeight * 0.95);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
