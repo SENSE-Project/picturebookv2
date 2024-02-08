@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Our tree barks come in a variety of textures, from smooth and silky to rough and bumpy. Each type of bark has its own special purpose, helping the us survive in the environment.";
+const contentText = "Our tree barks come in a variety of textures, from smooth and silky to rough and bumpy. Each type of bark has its own special purpose, helping us to survive in the environment.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
