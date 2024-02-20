@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella2.html";
+		window.location.href = "bella1_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella.html";
+		window.location.href = "bella_.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Once on the flower they can use buzz pollination to vibrate their flight muscles to shake the nutritious pollen all over their body.";
+const contentText = "Why do bumblebees buzz?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

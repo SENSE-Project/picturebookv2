@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella3_1.html";
+		window.location.href = "bella4.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella2_1.html";
+		window.location.href = "bella3.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Why do bumblebees have such big eyes?";
+const contentText = "As well as the two large compound eyes on the side of their head they have three smaller simple eyes at the top of their head which help them see UV markers on the flowers so they can reach the nectar and pollen.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

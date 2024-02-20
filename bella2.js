@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella3.html";
+		window.location.href = "bella2_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella1.html";
+		window.location.href = "bella1_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Have you ever thought about how hairy bumblebees are? This hair is really good at trapping pollen that falls from the anthers.";
+const contentText = "Have you ever thought about how hairy bumblebees are?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

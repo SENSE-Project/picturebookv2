@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/croc-scales.mp4');
+var buzz = new Audio('audio/fur2.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -172,7 +172,7 @@ function prepareCanvas() {
 	bella.src = "images/bella_brown_left.png";
 
 	main.onload = function () { resourceLoaded(); };
-	main.src = "images/bumblebee_eye_1000x876.jpg";
+	main.src = "images/bumblebee_fur_1000x704.jpg";
 
 	// adding button
 	// Create the button element:
@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella3_1.html";
+		window.location.href = "bella3.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella2_1.html";
+		window.location.href = "bella2.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Why do bumblebees have such big eyes?";
+const contentText = "This hair is really good at trapping pollen that falls from the anthers.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

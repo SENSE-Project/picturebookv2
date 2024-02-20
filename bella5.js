@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella4.html";
+		window.location.href = "bella4_1.html";
 		// Your code to execute when the button is clicked
 	});
 

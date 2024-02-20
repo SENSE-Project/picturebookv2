@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "bella5.html";
+		window.location.href = "bella4_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella3.html";
+		window.location.href = "bella3_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "They have these really clever structures called pollen baskets on their back legs. They brush their hairy bodies and pack the pollen into these pocket-like legs to take back to the hive to feed the bee larvae. A few lucky grains will be missed (for example on their head) and will go on to fertilise the next flower they visit.";
+const contentText = "How do bumblebees carry pollen on their legs?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
