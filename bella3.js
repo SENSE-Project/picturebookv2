@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "My big eyes help me see the world around me. I can see the colourful flowers so that I can find my food there, and also help the flowers pollinate.";
+const contentText = "Did you know that bees can find flowers and land safely with the help of not just two eyes but five! As well as the two large compound eyes on the side of their head they have three smaller simple eyes at the top of their head which help them see UV markers on the flowers so they can reach the nectar and pollen.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

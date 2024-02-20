@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Have you noticed my furry coat? Having so much hair helps me to collect lots of pollen. As I move from one flower to another, pollen stick to my hairy, furry body.";
+const contentText = "Have you ever thought about how hairy bumblebees are? This hair is really good at trapping pollen that falls from the anthers.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

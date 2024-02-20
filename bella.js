@@ -225,7 +225,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = 'Join Bella, the busy bumblebee, as she flutters through the meadow, pollinating flowers and spreading joy wherever she goes.';
+const contentText = 'Have you heard that bees are really important for our planet? Why? Because of Pollination. Pollinators are animals that move pollen from one flower to another, and in doing so fertilise plants to make seeds and reproduce. Insects including bumblebees and honey bees are all excellent pollinators. Even beetles, flies, birds, bats and lizards also help plants to reproduce and provide much of the food that we eat. Let us find out how…';
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

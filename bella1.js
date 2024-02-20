@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "When I visit flowers, I can move my wings and body very fast. It's like a happy dance! This shake makes the flower's yellow dust (pollen) stick to my body. Then I carry these pollen to other flowers, helping them to pollinate.";
+const contentText = "Once on the flower they can use buzz pollination to vibrate their flight muscles to shake the nutritious pollen all over their body.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Have you seen my backpack? In my leg, I have a basket full of pollen, like a backpack of pollen. As I go from one flower to another, I keep on carrying more and more pollen with me. I take these pollen back home to feed my family.";
+const contentText = "They have these really clever structures called pollen baskets on their back legs. They brush their hairy bodies and pack the pollen into these pocket-like legs to take back to the hive to feed the bee larvae. A few lucky grains will be missed (for example on their head) and will go on to fertilise the next flower they visit.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
