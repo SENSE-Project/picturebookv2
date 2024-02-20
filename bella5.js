@@ -328,41 +328,41 @@ function prepareCanvas() {
 	// Add the heading to the form
 	form.appendChild(heading);
 
-	const bodytext1 = document.createElement('h3');
-	bodytext1.textContent = "Hey there, little explorer! Lets go on a bumblebee adventure!";
+	const bodytext1 = document.createElement('h5');
+	bodytext1.textContent = "Hey there bumblebee detective! Do you want to become an instant scientist? On a sunny day in your school, park or garden you and a trusted adult can take part in a 10 minute survey to record how many bumblebees visit a patch of flowers.";
 	bodytext1.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext1);
 
 	const bodytext2 = document.createElement('h5');
-	bodytext2.textContent = 'Imagine you are a bee detective! Gather your friends, find a garden near you.';
+	bodytext2.textContent = "Find a patch of flowers. Record how many bumblebees visit in 10 minutes? If you want to add your information to other citizen scientist records then why not upload your results to the www.xpollination.org website.";
 	bodytext2.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext2);
 
 	const bodytext3 = document.createElement('h5');
-	bodytext3.textContent = 'For 30 minutes, watch carefully. How many bumblebees can you spot? Buzz, buzz!';
+	bodytext3.textContent = 'While you are doing this, did you notice if  they have a favourite colour flower they visit? Was the pollen obvious on some flowers and not others? Did you try observing in a different location- where did you find more and why do you think this was?';
 	bodytext3.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext3);
 
-	const bodytext4 = document.createElement('h5');
-	bodytext4.textContent = 'Do you notice more bees in spring or summer? Keep track! Maybe the bees love sunny days.';
-	bodytext4.classList.add('text-center', 'mt-4', 'mb-3');
+	// const bodytext4 = document.createElement('h5');
+	// bodytext4.textContent = 'Do you notice more bees in spring or summer? Keep track! Maybe the bees love sunny days.';
+	// bodytext4.classList.add('text-center', 'mt-4', 'mb-3');
 
-	form.appendChild(bodytext4);
+	// form.appendChild(bodytext4);
 
-	const bodytext5 = document.createElement('h5');
-	bodytext5.textContent = 'Look closely at the flowers. Which ones do the bees visit most? Maybe they have a favorite colour or smell!';
-	bodytext5.classList.add('text-center', 'mt-4', 'mb-3');
+	// const bodytext5 = document.createElement('h5');
+	// bodytext5.textContent = 'Look closely at the flowers. Which ones do the bees visit most? Maybe they have a favorite colour or smell!';
+	// bodytext5.classList.add('text-center', 'mt-4', 'mb-3');
 
-	form.appendChild(bodytext5);
+	// form.appendChild(bodytext5);
 
-	const bodytext6 = document.createElement('h5');
-	bodytext6.textContent = 'Now, lets visit another garden near you. Count the bees there too. Which place do the bumblebees like better?';
-	bodytext6.classList.add('text-center', 'mt-4', 'mb-3');
+	// const bodytext6 = document.createElement('h5');
+	// bodytext6.textContent = 'Now, lets visit another garden near you. Count the bees there too. Which place do the bumblebees like better?';
+	// bodytext6.classList.add('text-center', 'mt-4', 'mb-3');
 
-	form.appendChild(bodytext6);
+	// form.appendChild(bodytext6);
 
 
 	/* // Create the list of questions
