@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky4.html";
+		window.location.href = "barky3_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky2.html";
+		window.location.href = "barky2_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "We also have rough tree barks. When our tree barks grow fast it can wrinkle and crack and insects can live on our barks. The cracks and wrinkles make our tree bark rough.";
+const contentText = "How do rough barks help the trees?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

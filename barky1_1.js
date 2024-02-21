@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/Velvet lr.mp4');
+var buzz = new Audio('audio/Tree bark 4 rl.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -172,7 +172,7 @@ function prepareCanvas() {
 	bella.src = "images/barky_left.png";
 
 	main.onload = function () { resourceLoaded(); };
-	main.src = "images/treebark_3_1000x563.jpeg";
+	main.src = "images/treebark_1_1000x750.jpg";
 
 	// adding button
 	// Create the button element:
@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky2_1.html";
+		window.location.href = "barky2.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky1_1.html";
+		window.location.href = "bella1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "How do smooth barks help the trees?";
+const contentText = "Bark protects the tree from winter cold and summer heat. It keeps out the rain, whilst preventing moisture loss when the air is dry. It also helps to defend against infection and physical attack by insects and other hungry animals.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

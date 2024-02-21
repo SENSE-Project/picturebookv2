@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky2.html";
+		window.location.href = "barky1_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "bella.html";
+		window.location.href = "bella_.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Tree bark is like a cozy jacket that keeps a tree safe and warm. Let me tell you more about it. Imagine a tree wearing a thick, rugged coat. That coat is the bark! Bark is the outer layer of a tree's trunk. It's like the tree's tough skin. Just like we wear clothes to protect ourselves, trees wear bark to stay safe.";
+const contentText = "How do the bark protect the trees?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

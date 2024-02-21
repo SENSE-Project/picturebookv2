@@ -172,7 +172,7 @@ function prepareCanvas() {
 	bella.src = "images/barky_left.png";
 
 	main.onload = function () { resourceLoaded(); };
-	main.src = "images/treebark_1_1000x750.jpg";
+	main.src = "images/treebark_2_1000x667.jpg";
 
 	// adding button
 	// Create the button element:
@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky5.html";
+		window.location.href = "barky4_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky3.html";
+		window.location.href = "barky3_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "Our tree barks come in a variety of textures, from smooth and silky to rough and bumpy. Each type of bark has its own special purpose, helping us to survive in the environment.";
+const contentText = "What are the other tree bark textures?";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

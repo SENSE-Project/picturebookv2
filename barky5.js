@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky4.html";
+		window.location.href = "barky4_1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -328,44 +328,44 @@ function prepareCanvas() {
 	// Add the heading to the form
 	form.appendChild(heading);
 
-	const bodytext1 = document.createElement('h3');
-	bodytext1.textContent = "Hey there, little explorer! Lets go on a tree bark adventure!";
+	const bodytext1 = document.createElement('h5');
+	bodytext1.textContent = "Look out for trees with unique bark patterns. Explore the different textures by looking and through touch. Do we need something extra here, such as being able to identify your tree by touch alone? (So, if you are led to a tree, blindfolded, could you find the same tree again by feeling the texture of the bark?";
 	bodytext1.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext1);
 
 	const bodytext2 = document.createElement('h5');
-	bodytext2.textContent = 'Where can you see trees in your area? A nearby park, garden or wooded area?';
+	bodytext2.textContent = 'Bark Rubbings';
 	bodytext2.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext2);
 
 	const bodytext3 = document.createElement('h5');
-	bodytext3.textContent = 'Look for trees with unique bark patterns. Touch and feel the different textures.';
+	bodytext3.textContent = 'You will need:';
 	bodytext3.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext3);
 
 	const bodytext4 = document.createElement('h5');
-	bodytext4.textContent = 'Hold a piece of white paper against a tree trunk. Choose a crayon colour of your choice.';
+	bodytext4.textContent = 'Wax crayons without any labels on (Red, purple, black and brown colours work well.)';
 	bodytext4.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext4);
 
 	const bodytext5 = document.createElement('h5');
-	bodytext5.textContent = 'Gently rub the crayon over the paper while it is against the tree bark. The texture of the bark will transfer onto the paper, creating a beautiful pattern.';
+	bodytext5.textContent = 'Plain white paper.';
 	bodytext5.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext5);
 
 	const bodytext6 = document.createElement('h5');
-	bodytext6.textContent = 'Repeat the process with other trees. Notice how each tree has a unique bark design. Compare the rubbings and talk about what you see.';
+	bodytext6.textContent = 'Hold the paper against the bark. Rub the paper with the long edge of the crayon. (Not the pointed bit you use for writing.) The texture of the bark will come through onto the paper. Look at the pattern. Make rubbings of other tree barks.';
 	bodytext6.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext6);
 
 	const bodytext7 = document.createElement('h5');
-	bodytext7.textContent = 'Once you have made several bark rubbings, admire your collection! Display them at school or home, like a mini tree bark texture gallery.';
+	bodytext7.textContent = 'How are they different? How are they the same? Which is your favourite and why? Can you display your collection of rubbings at school (or at home) to create a tree bark texture gallery?';
 	bodytext7.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext7);

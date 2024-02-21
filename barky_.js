@@ -43,7 +43,7 @@ var colorBark = "bark";
 var logoImage = new Image();
 
 var bella = new Image();
-var main = new Image();
+var barky = new Image();
 
 var crayonPattern;
 var clickX = new Array();
@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/Velvet lr.mp4');
+var buzz = new Audio('audio/Tree bark 2 lr.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
@@ -169,10 +169,7 @@ function prepareCanvas() {
 	// Load images
 	// -----------
 	bella.onload = function () { resourceLoaded(); };
-	bella.src = "images/barky_left.png";
-
-	main.onload = function () { resourceLoaded(); };
-	main.src = "images/treebark_3_1000x563.jpeg";
+	bella.src = "images/barky_right.png";
 
 	// adding button
 	// Create the button element:
@@ -219,7 +216,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky2_1.html";
+		window.location.href = "barky1.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +240,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky1_1.html";
+		window.location.href = "bella.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +249,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "How do smooth barks help the trees?";
+const contentText = 'As you may know, trees have an outer covering on their trunks and large branches. This bark layer is similar, in many ways, to our skin, protecting the tree from weather, diseases and damage by animals.';
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
@@ -268,6 +265,7 @@ contentDiv.style.padding = "15px"; // Adjust values as needed
 
 // Append the div element to the desired location in your DOM
 canvasDiv.appendChild(contentDiv);
+
 
 	// Add mouse events
 	// ----------------
@@ -293,9 +291,9 @@ canvasDiv.appendChild(contentDiv);
 						console.log("x,y=" + mouseX + ", " + mouseY);
 						console.log(mouseX / canvasWidth, mouseY / canvasHeight);
 
-						if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
-							&& mouseY > canvasHeight * 0.06 
-							&& mouseY < canvasHeight * 0.99) {
+						if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
+							&& mouseY > canvasHeight * 0.36 
+							&& mouseY < canvasHeight * 0.74) {
 							t = colorBuzz;
 							console.log(t)
 							}
@@ -384,9 +382,9 @@ canvasDiv.appendChild(contentDiv);
 			if (curTool == "haptics") {
 				var t = "null";
 
-				if (mouseX > canvasWidth * 0.008 && mouseX < canvasWidth * 0.5
-					&& mouseY > canvasHeight * 0.06 
-					&& mouseY < canvasHeight * 0.99) {
+				if (mouseX > canvasWidth * 0.1 && mouseX < canvasWidth * 0.4
+					&& mouseY > canvasHeight * 0.36 
+					&& mouseY < canvasHeight * 0.74) {
 					t = colorBuzz;
 					console.log(t)
 					}
@@ -557,8 +555,8 @@ function redrawInterface(intType) {
 		context.strokeRect(canvasX + 5, 5, canvasWidth, canvasHeight - 10);
 		console.log("h=" + canvasHeight + " w=" + canvasWidth);
 		//context.drawImage(logoImage, canvasWidth * 0.44, 10, canvasWidth * 0.16, canvasHeight * 0.16 * 1.6);
-		context.drawImage(bella, canvasWidth * 0.65, canvasHeight * 0.5, canvasWidth * 0.2, canvasHeight * 0.2 * 1.6);
-		context.drawImage(main, canvasWidth * 0.01, canvasHeight * 0.03, canvasWidth * 0.5, canvasHeight * 0.95);
+		context.drawImage(bella, canvasWidth * 0.1, canvasHeight * 0.25, canvasWidth * 0.35, canvasHeight * 0.35 * 1.6);
+		//context.drawImage(barky, canvasWidth * 0.6, canvasHeight * 0.25, canvasWidth * 0.3, canvasHeight * 0.3 * 1.6);
 
 		console.log("draw logo: h=" + canvasHeight + " w=" + canvasWidth);
 	}

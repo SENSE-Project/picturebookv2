@@ -219,7 +219,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky2_1.html";
+		window.location.href = "barky3.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -243,7 +243,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button3.addEventListener('click', () => {
 		console.log("Button3 clicked!");
-		window.location.href = "barky1_1.html";
+		window.location.href = "barky2.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "How do smooth barks help the trees?";
+const contentText = "Tree bark comes in a wide variety of textures. In some trees, the bark is smooth. This can have the advantage of making it harder for insects to get a grip on the tree. However, to keep a smooth surface, the tree must grow its bark quite slowly. This means trees with smooth bark take longer to repair themselves after an injury.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;

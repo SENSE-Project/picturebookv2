@@ -216,7 +216,7 @@ function prepareCanvas() {
 	// Add an event listener for the button click:
 	button2.addEventListener('click', () => {
 		console.log("Button2 clicked!");
-		window.location.href = "barky1.html";
+		window.location.href = "barky_.html";
 		// Your code to execute when the button is clicked
 	});
 
@@ -225,7 +225,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = 'Join Barky, the wise tree bark, as he stands tall through seasons and shares his stories with you.';
+const contentText = 'Have you ever thought about the bark on trees?';
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
