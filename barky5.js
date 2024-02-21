@@ -329,7 +329,7 @@ function prepareCanvas() {
 	form.appendChild(heading);
 
 	const bodytext1 = document.createElement('h5');
-	bodytext1.textContent = "Look out for trees with unique bark patterns. Explore the different textures by looking and through touch. Do we need something extra here, such as being able to identify your tree by touch alone? (So, if you are led to a tree, blindfolded, could you find the same tree again by feeling the texture of the bark?";
+	bodytext1.textContent = "Look out for trees with unique bark patterns. Explore the different textures by looking and through touch.";
 	bodytext1.classList.add('text-center', 'mt-4', 'mb-3');
 
 	form.appendChild(bodytext1);
