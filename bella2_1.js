@@ -252,7 +252,7 @@ const contentDiv = document.createElement('div');
 contentDiv.classList.add('bg-success-subtle', 'rounded-3', 'h3');
 
 // Create the text content with line breaks
-const contentText = "This hair is really good at trapping pollen that falls from the anthers.";
+const contentText = "This hair is really good at keeping them warm and also trapping pollen that falls from the anthers.";
 
 // Add the text content to the div element
 contentDiv.textContent = contentText;
