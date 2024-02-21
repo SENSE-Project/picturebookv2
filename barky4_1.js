@@ -98,7 +98,7 @@ eyeHex.load();
 eyeHex.loop = true;
 var playEyeHex = 0;
 
-var buzz = new Audio('audio/Tree bark 2 lr.mp4');
+var buzz = new Audio('audio/Wooden hard smooth 2 tb.mp4');
 buzz.load();
 buzz.loop = true;
 var playBuzz = 0;
